@@ -18,11 +18,9 @@ export IRCNICK=gossiper
 export IRCSERVER=chat.freenode.net:6667:40964026
 export CVS_RSH=ssh
 
-export PATH=/usr/texbin:$PATH        # for brew
 export PATH=$HOME/bin:$PATH
 export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
-export PATH=/usr/local/bin:$PATH        # for brew
 #export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
@@ -37,12 +35,7 @@ alias gv='git log --oneline --graph --decorate --all'
 alias gs='git status'
 . ~/.git-completion.bash
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
-
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-
 
 # pip bash completion start
 _pip_completion()
@@ -53,4 +46,17 @@ _pip_completion()
 }
 complete -o default -F _pip_completion pip
 # pip bash completion end
+
+#############################################################
+# Platform dependent
+#############################################################
+. .myconfig
+if [ $PLATFORM == 'MAC' ]; then
+    export PATH=/usr/texbin:$PATH        # for brew
+    export PATH=/usr/local/bin:$PATH        # for brew
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+fi
+
 
