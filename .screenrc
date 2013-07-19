@@ -1,0 +1,72 @@
+startup_message     off           # default: on
+vbell               off           # default: on
+
+hardcopy_append     on            # default: off
+term				linux
+termcapinfo rxvt-cygwin-native ti@:te@
+defscrollback           8192            # default: 100
+silencewait             16              # default: 30
+bufferfile            $HOME/.screen/exchange
+hardcopydir           $HOME/.screen
+shell                 bash
+caption splitonly "%{+u wk} %=%?%-w%?%{rw}%n%{m}*%{b}%f%t%?(%u)%?%{wk}%?%+w%? %{wk}%="
+sorendition +b kg # black  on bold green
+activity              "%c -> %=%{r}%n %t %{b}activity!%="
+bell                  "%c -> %=%{r}%n %t %{w} bell!~%="
+pow_detach_msg          "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+register [ "\033:se noai\015a"
+register ] "\033:se ai\015a"
+msgwait 2
+shelltitle ']$ |tmp'
+defc1 off
+
+bind k
+bind ^k
+bind .
+bind ^h
+bind h
+bind 'K' kill
+bind '}' history
+bind ^] paste [.]
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+bind ^\ 
+bind \\ quit        # default
+bind X 
+bind x 
+bind ^x 
+bind ^X 
+bind j focus down
+bind k focus up
+
+#bindkey -k k1 select 0
+#bindkey -k k2 select 1
+#bindkey -k k3 select 2
+#bindkey -k k4 select 3
+#bindkey -k k5 select 4
+#bindkey -k k6 select 5
+#bindkey -k k7 select 6
+#bindkey -k k8 select 7
+#bindkey -k k9 select 8
+#bindkey -k k7 prev
+#bindkey -k k8 next
+#bindkey -k kb stuff ^H
+
+#bindkey -k k7 stuff zM
+#bindkey -k k8 stuff zR
+
+bindkey -k k1 
+bindkey -k k2 
+bindkey -k k3 
+bindkey -k k4 
+bindkey -k k5 
+bindkey -k k6 
+bindkey -k k7 
+bindkey -k k8
+bindkey -k k9 
+bindkey -k k;	#F10
+bindkey -k F1	#F11
+bindkey -k F2	#F12
+hardstatus alwayslastline "%{bw} %= %w %=| %m-%d %c:%s %?"
