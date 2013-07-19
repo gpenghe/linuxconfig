@@ -25,8 +25,6 @@ export PATH=/usr/local/share/python:$PATH
 
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
-. ~/.gph_alias
-
 if [ -f ~/usr/etc/bash_completion ]; then
     . /usr/etc/bash_completion
 fi
@@ -58,5 +56,6 @@ if [ $PLATFORM == 'MAC' ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
 fi
+. ~/.gph_alias
 
 
