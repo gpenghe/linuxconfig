@@ -1,3 +1,6 @@
+# define PLATFORM
+. $HOME/.myconfig
+
 #mkdir /r/cygwin_tmp &>/dev/null
 
 #shell options
@@ -12,7 +15,7 @@ export PS1='[\w]$ '
 
 source ~/.git-completion.bash
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1='\[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
+export PS1='\[\e[32;1m\]$PLATFORM: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
 
 export IRCNICK=gossiper
 export IRCSERVER=chat.freenode.net:6667:40964026
@@ -48,7 +51,6 @@ complete -o default -F _pip_completion pip
 #############################################################
 # Platform dependent
 #############################################################
-. $HOME/.myconfig
 if [ $PLATFORM == 'MAC' ]; then
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
