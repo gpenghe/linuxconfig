@@ -48,7 +48,7 @@ complete -o default -F _pip_completion pip
 #############################################################
 # Platform dependent
 #############################################################
-. .myconfig
+. $HOME/.myconfig
 if [ $PLATFORM == 'MAC' ]; then
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
