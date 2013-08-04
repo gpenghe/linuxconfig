@@ -32,8 +32,6 @@ if [ -f ~/usr/etc/bash_completion ]; then
     . /usr/etc/bash_completion
 fi
 
-alias gv='git log --oneline --graph --decorate --all'
-alias gs='git status'
 . ~/.git-completion.bash
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
