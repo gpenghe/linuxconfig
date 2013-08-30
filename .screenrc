@@ -69,5 +69,5 @@ bindkey -k k9
 bindkey -k k;	#F10
 bindkey -k F1	#F11
 bindkey -k F2	#F12
-backtick 1 0 0 /Users/gpenghe/bin/print_ip
+backtick 1 0 0 print_ip
 hardstatus alwayslastline "%{bw}%1` %= %w %=| %m-%d %c:%s %?"
