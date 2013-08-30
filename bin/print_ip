@@ -1,0 +1,5 @@
+if [ "$PLATFORM" = "MAC" ] ; then
+    ifconfig en0|grep netmask|awk '{print $2;}'
+else
+    ifconfig eth0|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'
+fi
