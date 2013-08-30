@@ -1,5 +1,6 @@
 # define PLATFORM
 . $HOME/.myconfig
+export PLATFORM # needed on MAC
 
 #mkdir /r/cygwin_tmp &>/dev/null
 
