@@ -56,6 +56,11 @@ function define {
   open "https://www.google.com#q=define+$word";
 }
 
+function google {
+  word="$@";
+  open "https://www.google.com#q=$word";
+}
+
 if [ $PLATFORM == 'MAC' ]; then
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
