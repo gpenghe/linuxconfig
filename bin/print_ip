@@ -6,6 +6,9 @@ if [ "$PLATFORM" = "MAC" ] ; then
     fi
 else
     ip=`ifconfig eth0|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'`
+    if [ -z "$ip" ]; then
+        ip=`ifconfig eth1|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'`
+    fi
 fi
 
 if [ -n "$ip" ]; then
