@@ -1,5 +1,10 @@
+ip='';
 if [ "$PLATFORM" = "MAC" ] ; then
-    ifconfig en0|grep netmask|awk '{print $2;}'
+    ip=`ifconfig en0|grep netmask|awk '{print $2;}'`
 else
-    ifconfig eth0|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'
+    ip=`ifconfig eth0|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'`
+    if [ -n $ip ]; then
+        ip=`ifconfig wlan0|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'`
+    fi
 fi
+echo $ip
