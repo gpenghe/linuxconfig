@@ -1,0 +1,345 @@
+"===========================================================================
+"
+"  Workstation/Platform Settings
+"
+"===========================================================================
+
+
+"===========================================================================
+"
+"  Common Settings
+"
+"===========================================================================
+
+"----------------------------------------------------------
+"  vim behaviors
+"----------------------------------------------------------
+
+set nu
+set statusline=%F%m%r%h%w(%L)\ \ \ \ \ [%l,%v]\ \ \ \ [%p%%]
+let loaded_matchparen = 1
+set nobinary
+set fileformat=dos
+
+"----------------------------------------------------------
+"  Key mappings
+"----------------------------------------------------------
+
+"------------- General Keys -----------
+map ,, :A<Enter>
+map ,q :q<Enter>
+map ,hv :!hg view<Enter>
+map ,sD :vsp new<Enter>:read !svn diff<Enter>:set syntax=diff buftype=nofile<Enter>gg
+map ,hD :vsp new<Enter>:read !hg diff<Enter>:set syntax=diff buftype=nofile<Enter>gg
+"FIXME: file name processing
+"map ,d :tmpfile=tempname().".c"<Enter><Enter>:!svn cat -r BASE % > tmpfile<Enter><Enter>:vert diffsplit tmpfile<Enter><Enter>:set buftype=nofile<Enter><Enter>gg
+map ,sd :!svn cat -r BASE % > /tmp/tmpfile.c<Enter><Enter>:diffsplit /tmp/tmpfile.c<Enter><Enter>gg
+map ,hd :!hg cat % > /tmp/tmpfile.c<Enter><Enter>:diffsplit /tmp/tmpfile.c<Enter><Enter>gg
+map ,ss :!svn stat\|grep -v "\.out$"\|grep -v "\.orig$"\|grep -v "\.swp$"<Enter>
+map ,hs :!hg stat\|grep -v "\.out$"\|grep -v "\.orig$"\|grep -v "\.swp$"<Enter>
+map ,ss :!svn stat\|grep -v "\.out$"\|grep -v "\.orig$"\|grep -v "\.swp$"<Enter>
+map ,sl :!svn log\|head -n14<Enter>
+map ,hl :!hg log\|head -n14<Enter>
+map ,e :vsp<Enter>:Explore<Enter>
+map ZZ :wq<CR>
+map zz :q<CR>
+
+"TODO: improve this macro!
+map <C-S-C> :s/\(^[[:blank:]]*\)/\1#/<ESC>:noh<ESC>j
+map <C-S-D> :s/\(^[[:blank:]]*\)#/\1/<ESC>:noh<ESC>j      
+autocmd BufEnter *.cpp,*.c,*.h map <C-S-C> :s/\(^[[:blank:]]*\)/\1\/\//<ESC>:noh<ESC>j
+autocmd BufEnter *.cpp,*.c,*.h map <C-S-D> :s/\(^[[:blank:]]*\)\/\//\1/<ESC>:noh<ESC>j      
+
+nnoremap ; :
+" 2009-0507
+"nn <C-w> 4w
+"nn <C-b> 4b
+nn <C-h> 3h
+nn <C-l> 3l
+"nn <C-k> 3k
+"nn <C-j> 3j
+"nn <C-S-o> o<ESC>
+"
+"" Switch between windows, maximizing the current window
+"
+"map <C-J> <C-W>j<C-W>_
+"map <C-K> <C-W>k<C-W>_ 
+map <C-h> :ConqueTermVSplit bash<CR>
+
+"------------- Functions Keys -----------
+" Unmapp all function keys
+map <F1>	<ESC>
+map <F2>	<ESC>
+map <F3>	<ESC>
+map <F4>	<ESC>
+map <F5>	<ESC>
+map <F6>	<ESC>
+map <F7>	<ESC>
+map <F8>	<ESC>
+map <F9>	<ESC>
+map <F10>	<ESC>
+map <F11>	<ESC>
+map <F12>	<ESC>
+imap <F1>	<ESC>
+imap <F2>	<ESC>
+imap <F3>	<ESC>
+imap <F4>	<ESC>
+imap <F5>	<ESC>
+imap <F6>	<ESC>
+imap <F7>	<ESC>
+imap <F8>	<ESC>
+imap <F9>	<ESC>
+imap <F10>	<ESC>
+imap <F11>	<ESC>
+imap <F12>	<ESC>
+
+map  <F5>	:bn<C-M>	" Some macros to manage the buffer of vim
+map  <F6>	:bp<C-M>	" 
+map  <F7>	:cn<C-M>	" 
+map  <F8>	:cp<C-M>	" 
+map  <F9>   @a
+
+"=== toggle paste
+map <F10> :set paste<CR>
+map <F11> :set nopaste<CR>
+imap <F10> <C-O>:set paste<CR>
+imap <F11> <nop>
+set pastetoggle=<F11>
+
+"=== F12 mapped to vim-togglemouse
+
+
+"au BufNewFile,BufRead README			setf rst
+"au BufNewFile,BufRead *.txt			setf rst
+
+"******************************* current cscope db **********************************************
+"cs add /home/gph/cscope/realsrc.out
+"cs add /home/gph/cscope/realsrc.out2
+"cs add /home/gph/platform/BF561/hhbf/uClinux-dist/linux-2.6.x/cscope.out
+"mplayer:
+"cs add /home/gph/cscope/mplayer-1.0pre8.out
+"cs add /home/gph/cscope/mplayer-official-svn.out
+"cs add /home/gph/cscope/mplayer-bfin.out
+
+if $CSCOPE_DB != ""
+    if $CONSOLE == "CYGWIN"
+        cs add $CSCOPE_DB
+    endif
+endif
+
+let tmpf = "./cscope.out"
+if filereadable(expand(tmpf))
+  exec "cs add ". tmpf
+endif
+
+let tmpf = "../cscope.out"
+if filereadable(expand(tmpf))
+  exec "cs add ". tmpf
+endif
+
+let tmpf = "../../cscope.out"
+if filereadable(expand(tmpf))
+  exec "cs add ". tmpf
+endif
+
+let tmpf = "../../../cscope.out"
+if filereadable(expand(tmpf))
+  exec "cs add ". tmpf
+endif
+
+let tmpf = "../../../../cscope.out"
+if filereadable(expand(tmpf))
+  exec "cs add ". tmpf
+endif
+
+let tmpf = "../../../../../cscope.out"
+if filereadable(expand(tmpf))
+  exec "cs add ". tmpf
+endif
+
+"****************************** Variables settings ***********************************************
+set splitright
+"20070207 new
+set nocompatible	" Use Vim settings, rather then Vi settings
+"set showbreak=>>
+
+syntax on
+let b:match_words = &matchpairs
+set autoindent
+"set completeopt=preview
+set showmode
+set is
+set hlsearch
+set ic
+set nowrapscan
+set expandtab
+
+set tabstop=4 
+if $TABSTOP == 4 
+"for Real code
+"set tabstop=4
+endif
+set softtabstop=4
+set shiftwidth=4
+set cindent sw=4
+set laststatus=1
+set fo=
+"set foldmethod=indent
+set showmatch
+set matchtime=1
+"hi MatchParen ctermbg=gray
+"au! CursorHold *.[ch] nested exe "silent! ptag " . expand("<cword>")
+set updatetime=1000
+
+"******************************* latex vim begin**********************************************
+" REQUIRED. This makes vim invoke latex-suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse latex-suite. Set your grep
+" program to alway generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+"******************************* latex vim end**********************************************
+
+"***********Abstractions*************
+ab ja #if 1 //HHTECH: added by jason,<Esc>:Pd<Enter>kJo<Enter>#endif <Esc>kk
+
+"***********Functions*************
+command D :call PRINTDATE()
+command Pd :call PRINTDATE()
+	func PRINTDATE() "type current date
+	read !date +\%Y.\%m.\%d
+	endf
+
+command Dc :call DCOMM()
+	func DCOMM() " delete the block comment macro lines.
+	exec "normal 1l"
+	let l1 = searchpair('^\s*#\s*if\s\+\d\+', '', '^\s*#\s*endif', 'Wb')
+	if l1 < 1
+	return
+	endif
+	exec "normal ]#"
+	if getline(".") =~ '^\s*#\s*else'
+	return
+	endif
+	exec "normal dd" . l1 . "Gdd"
+	endf
+
+command Rc :call RCOMM()
+	func RCOMM()  " reverse the block comment.
+	exec "normal 1l"
+	if searchpair('^\s*#\s*if\s\+\d\+', '', '^\s*#\s*enif', 'Wb') < 1
+	return
+	endif
+	exec '.s#\d\+#\=submatch(0)==0 ? 1 : 0#'
+	endf
+
+command -range Co :call  COMM(<line1>,<line2>)
+	func COMM(l1, l2) " add the MACRO comment around the block of C/Cpp code.
+	exec a:l2+1 . "s%^%#endif%"
+	exec a:l1 . "s%^%#ifndef BS_NO_8BIT /* HHTECH, %"
+	exec "normal k"
+	exec "Pd"
+	exec "normal kJ"
+	exec a:l1 . "s%$% */%"
+	endf
+
+command -range Ch :call  CHANGE(<line1>,<line2>)
+	func CHANGE(l1, l2) " add the if/else/endif comment around the block of C/Cpp code.
+	call COMM(a:l1,a:l2)
+	exec a:l2+2 . "s%^%#else%"
+	exec "normal k"
+	endf
+
+command -range Sh :call  ADDSHARP(<line1>,<line2>)
+	func ADDSHARP(l1, l2) " add # before each line 
+	exec a:l1 . "," . a:l2 . "s%^%#%"
+	endf
+
+set ls=2
+set fileformat=dos
+
+:set path=.,/usr/local/include,/usr/include,hdr
+set expandtab " TODO: Only in .m file
+"
+set winminheight=0
+
+function MyConqueStartup(term)
+
+    " set buffer syntax using the name of the program currently running
+    let syntax_associations = { 'ipython': 'python', 'irb': 'ruby' }
+
+    if has_key(syntax_associations, a:term.program_name)
+        execute 'setlocal syntax=' . syntax_associations[a:term.program_name]
+    else
+        execute 'setlocal syntax=' . a:term.program_name
+    endif
+
+    " shrink window height to 10 rows
+    vertical resize 90
+
+    " silly example of terminal api usage
+    "if a:term.program_name == 'bash'
+        "call a:term.writeln('svn up ~/projects/*')
+    "endif
+
+endfunction
+
+call conque_term#register_function('after_startup', 'MyConqueStartup')
+
+" Enable mouse support
+set ttymouse=xterm2
+set mouse=a
+
+if filereadable(expand(".vimrc.local"))
+    source .vimrc.local
+elseif filereadable(expand("../.vimrc.local"))
+    source ../.vimrc.local
+elseif filereadable(expand("../../.vimrc.local"))
+    source ../../.vimrc.local
+elseif filereadable(expand("../../../.vimrc.local"))
+    source ../../../.vimrc.local
+elseif filereadable(expand("../../../../.vimrc.local"))
+    source ../../../../.vimrc.local
+elseif filereadable(expand("../../../../../.vimrc.local"))
+    source ../../../../../.vimrc.local
+elseif filereadable(expand("../../../../../../.vimrc.local"))
+    source ../../../../../../.vimrc.local
+endif
+
+function! s:swap_lines(n1, n2)
+    let line1 = getline(a:n1)
+    let line2 = getline(a:n2)
+    call setline(a:n1, line2)
+    call setline(a:n2, line1)
+endfunction
+
+function! s:swap_up()
+    let n = line('.')
+    if n == 1
+        return
+    endif
+
+    call s:swap_lines(n, n - 1)
+    exec n - 1
+endfunction
+
+function! s:swap_down()
+    let n = line('.')
+    if n == line('$')
+        return
+    endif
+
+    call s:swap_lines(n, n + 1)
+    exec n + 1
+endfunction
+
+noremap <silent> <c-k> :call <SID>swap_up()<CR>
+noremap <silent> <c-j> :call <SID>swap_down()<CR>
