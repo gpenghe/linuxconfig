@@ -22,3 +22,5 @@
     cia = commit -a
 [core]
 	excludesfile = /Users/gpenghe/.gitignore_global
+[push]
+	default = matching

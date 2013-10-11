@@ -1,10 +1,17 @@
-ip='';
+ip=''
 if [ "$PLATFORM" = "MAC" ] ; then
     ip=`ifconfig en0|grep netmask|awk '{print $2;}'`
+    if [ -z "$ip" ]; then
+        ip=`ifconfig en1|grep netmask|awk '{print $2;}'`
+    fi
 else
     ip=`ifconfig eth0|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'`
-    if [ -z $ip ]; then
-        ip=`ifconfig wlan0|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'`
-    fi
 fi
+
+if [ -n "$ip" ]; then
+    echo $ip
+else
+    echo 'Unable to obtain ip'
+fi
+
 echo $ip
