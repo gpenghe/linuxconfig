@@ -29,9 +29,15 @@ export PATH=/usr/local/share/python:$PATH
 export PATH=$PATH:/sbin:/usr/sbin
 export PATH=$PATH:/utrc/software/openmpi/1.6.5/gcc/bin
 
-# for graphviz/dot
-export LD_LIBRARY_PATH=$HOME/usr/lib:/utrc/software/openmpi/1.6.5/gcc/lib
+# csh copy of LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH_COPY 
+
+# graphviz/dot
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
 export GVBINDIR=~/usr/lib
+
+# OpenMP (not used since set in csh)
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/software/openmpi/1.6.5/gcc/lib
 
 
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
