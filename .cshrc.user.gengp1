@@ -1,0 +1,91 @@
+#!/bin/csh
+#
+# /.cshrc.user.template
+#
+#This is the user's .cshrc.
+#Changes should be made here: 
+
+#11/15/2010 GG
+alias rm rm -i
+alias mv mv -i
+alias cp cp -i
+# GG end
+#
+     setenv OS `uname`
+#
+if( $OS != "Linux" ) then
+   if( $TERM == "xterm-color" ) then
+      setenv TERM xterm
+   endif
+endif
+
+########################################
+if ($OS == "AIX") then
+
+     setenv XENVIRONMENT ~/.Xdefaults
+if ( $OS != "IRIX" ) then
+	if ( $TERM == "IRIS-ANSI-NET" ) then
+		setenv TERM vt100
+
+# For interactive shells, set the prompt to show the host name and event number.if ( $?prompt ) then
+        if ( -o /bin/su ) then
+                set prompt="`hostname -s` \!# "
+        else
+                set prompt="`hostname -s` \!% "
+        endif
+   endif
+endif
+########################################
+
+else if ($OS == "IRIX64") then
+
+# For interactive shells, set the prompt to show the host name and event number.if ( $?prompt ) then
+        if ( -o /bin/su ) then
+                set prompt="`hostname -s` \!# "
+        else
+                set prompt="`hostname -s` \!% "
+        endif
+########################################
+
+else if ( $OS == "IRIX")  then
+
+# For interactive shells, set the prompt to show the host name and event number.if ( $?prompt ) then
+        if ( -o /bin/su ) then
+                set prompt="`hostname -s` \!# "
+        else
+                set prompt="`hostname -s` \!% "
+        endif
+########################################
+else if ($OS == "SunOS") then
+
+if ( $OS != "IRIX" ) then
+	if ( $TERM == "iris-ansi-net" ) then
+		setenv TERM vt100
+	endif
+endif
+########################################
+else if ($OS == "HP-UX") then
+
+########################################
+else if ( $OS == "Linux" ) then
+
+if (-r /etc/csh.login ) then
+     source /etc/csh.login
+endif
+	endif
+
+set history   = 100
+set filec
+
+set noclobber
+alias h history
+alias c clear
+
+########################################
+# Add customization here ....
+
+setenv PATH "${PATH}:${HOME}/bin:/utrc/home/gengp1/opt/localgit/bin"
+source /utrc/fs1/login/Software/openmpi163_env intel12
+setenv LD_LIBRARY_PATH_COPY $LD_LIBRARY_PATH
+
+
