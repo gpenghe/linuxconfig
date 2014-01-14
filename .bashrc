@@ -27,7 +27,7 @@ export PATH=$HOME/usr/bin:$PATH
 export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=$PATH:/sbin:/usr/sbin
-export PATH=$PATH:/utrc/software/openmpi/1.6.5/gcc/bin
+#export PATH=$PATH:/utrc/software/openmpi/1.6.5/gcc/bin
 
 # csh copy of LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH_COPY 
