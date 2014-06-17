@@ -25,7 +25,7 @@ export CVS_RSH=ssh
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/usr/bin:$PATH
 export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
+export PATH=/usr/local/share/python:$HOME/usr/local/bin:$PATH
 export PATH=$PATH:/sbin:/usr/sbin
 #export PATH=$PATH:/utrc/software/openmpi/1.6.5/gcc/bin
 
@@ -39,8 +39,11 @@ export GVBINDIR=~/usr/lib
 # OpenMP (not used since set in csh)
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/software/openmpi/1.6.5/gcc/lib
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/local/lib
 
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+
+export PKG_CONFIG_PATH=$HOME/usr/local/lib/pkgconfig:$HOME/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 
 if [ -f ~/usr/etc/bash_completion ]; then
     . /usr/etc/bash_completion
@@ -71,5 +74,6 @@ if [ $PLATFORM == 'MAC' ]; then
     fi
 fi
 . ~/.gph_alias
-
+export http_proxy=http://proxyva.utc.com:8080
+export ftp_proxy=http://proxyva.utc.com:8080
 
