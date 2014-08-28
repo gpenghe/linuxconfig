@@ -22,20 +22,20 @@ export IRCNICK=gossiper
 export IRCSERVER=chat.freenode.net:6667:40964026
 export CVS_RSH=ssh
 
-export PATH=$HOME/bin:$PATH
 export PATH=$HOME/usr/bin:$PATH
 export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
 export PATH=/usr/local/share/python:$HOME/usr/local/bin:$PATH
 export PATH=$PATH:/sbin:/usr/sbin
 export PATH=/utrc/fs1/software/python/2.7.3/bin:$PATH
 #export PATH=$PATH:/utrc/software/openmpi/1.6.5/gcc/bin
+export PATH=$HOME/bin:$PATH
 
 # csh copy of LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH_COPY 
 
 # graphviz/dot
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
-export GVBINDIR=~/usr/lib
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
+#export GVBINDIR=~/usr/lib
 
 # OpenMP (not used since set in csh)
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/software/openmpi/1.6.5/gcc/lib
@@ -44,6 +44,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/fs1/software/python/2.7.3/lib
 
 
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+export MANPATH=$MANPATH:/utrc/home/gengp1/opt/localgit/share/man
 
 export PKG_CONFIG_PATH=$HOME/usr/local/lib/pkgconfig:$HOME/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 export PKG_CONFIG_PATH=$HOME/ffmpeg_build/lib/pkgconfig:$PKG_CONFIG_PATH
