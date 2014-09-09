@@ -26,7 +26,7 @@ export PATH=$HOME/usr/bin:$PATH
 export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
 export PATH=/usr/local/share/python:$HOME/usr/local/bin:$PATH
 export PATH=$PATH:/sbin:/usr/sbin
-export PATH=/utrc/fs1/software/python/2.7.3/bin:$PATH
+#export PATH=/utrc/fs1/software/python/2.7.3/bin:$PATH
 #export PATH=$PATH:/utrc/software/openmpi/1.6.5/gcc/bin
 export PATH=$HOME/bin:$PATH
 
@@ -40,14 +40,21 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH_COPY
 # OpenMP (not used since set in csh)
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/software/openmpi/1.6.5/gcc/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/local/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/fs1/software/python/2.7.3/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/fs1/software/python/2.7.3/lib
 
 
+export MANPATH=$MANPATH:$HOME/usr/man:$HOME/usr/local/man
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 export MANPATH=$MANPATH:/utrc/home/gengp1/opt/localgit/share/man
 
 export PKG_CONFIG_PATH=$HOME/usr/local/lib/pkgconfig:$HOME/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 export PKG_CONFIG_PATH=$HOME/ffmpeg_build/lib/pkgconfig:$PKG_CONFIG_PATH
+
+
+# INCLUDE && LIBDIR
+export CPATH=$CPATH:$HOME/usr/include:$HOME/usr/local/include
+export LIBPATH=$LIBPATH:$HOME/usr/lib:$HOME/usr/local/lib
 
 if [ -f ~/usr/etc/bash_completion ]; then
     . /usr/etc/bash_completion
@@ -78,6 +85,7 @@ if [ $PLATFORM == 'MAC' ]; then
     fi
 fi
 . ~/.gph_alias
-export http_proxy=http://proxyva.utc.com:8080
-export ftp_proxy=http://proxyva.utc.com:8080
+export http_proxy=http://gengp1:Twofold.888@proxyva.utc.com:8080
+export https_proxy=http://gengp1:Twofold.888@proxyva.utc.com:8080
+export ftp_proxy=http://gengp1:Twofold.888@proxyva.utc.com:8080
 
