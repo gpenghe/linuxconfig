@@ -1,20 +1,17 @@
-ip=''
-if [ "$PLATFORM" = "MAC" ] ; then
-    ip=`ifconfig en0|grep netmask|awk '{print $2;}'`
-    if [ -z "$ip" ]; then
-        ip=`ifconfig en1|grep netmask|awk '{print $2;}'`
-    fi
-else
-    ip=`ifconfig eth0|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'`
-    if [ -z "$ip" ]; then
-        ip=`ifconfig eth1|\grep Bcast|awk '{print $2}'|awk -F: '{print $2}'`
-    fi
-fi
+#!/usr/bin/env python
+import sys
+import socket
 
-if [ -n "$ip" ]; then
-    echo $ip
-else
-    echo 'Unable to obtain ip'
-fi
+def get_self_ip():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    dummy_remote = '10.10.10.10'
+    try:
+        s.connect((dummy_remote, 9))
+        client = s.getsockname()[0]
+    except socket.error:
+        client = "Unknown IP"
+    finally:
+        del s
+    return client
 
-echo $ip
+print get_self_ip()
