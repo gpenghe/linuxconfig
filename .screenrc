@@ -69,5 +69,5 @@ bindkey -k k9
 bindkey -k k;	#F10
 bindkey -k F1	#F11
 bindkey -k F2	#F12
-backtick 1 0 0 print_ip
+backtick 1 0 0 $HOME/bin/print_ip
 hardstatus alwayslastline "%{bw}%H %1` %= %w %=| %m-%d %c:%s %?"
