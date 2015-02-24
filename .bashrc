@@ -35,7 +35,6 @@ export PS1='\[\e[32;1m\]$PLATFORM: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)"
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
-
 . ~/.gph_alias
 
 #############################################################
@@ -52,6 +51,8 @@ if [ $PLATFORM == 'MAC' ]; then
     export PLATFORM # needed on MAC
 fi
 if [ $PLATFORM == 'LINUX' ]; then
+    export EDITOR=vim
+
     if [ $HOST == 'UTRC' ]; then
         export PATH=$HOME/usr/bin:$PATH
         export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
