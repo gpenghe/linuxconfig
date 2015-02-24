@@ -5,6 +5,7 @@ if [ $PLATFORM == 'MAC' ]; then
     alias la="gls -A"
     alias cp="gcp -i"
     alias ll="gls -l"
+    alias find="gfind"
 else
     alias ls="ls --color -G"
     alias la="ls -A"
