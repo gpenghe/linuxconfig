@@ -35,6 +35,8 @@ export PS1='\[\e[32;1m\]$PLATFORM: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)"
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
+export PATH=$HOME/bin:$PATH
+
 . ~/.gph_alias
 
 #############################################################
@@ -58,7 +60,6 @@ if [ $PLATFORM == 'LINUX' ]; then
         export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
         export PATH=/usr/local/share/python:$HOME/usr/local/bin:$PATH
         export PATH=$PATH:/sbin:/usr/sbin
-        export PATH=$HOME/bin:$PATH
         export PATH=$PATH:$HOME/.local/bin
 
         # csh copy of LD_LIBRARY_PATH
