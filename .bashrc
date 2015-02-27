@@ -55,6 +55,20 @@ fi
 if [ $PLATFORM == 'LINUX' ]; then
     export EDITOR=vim
 
+    if [ $HOST == 'MINIPC' ]; then
+        export JDK_HOME=$HOME/opt/jdk1.7.0_75
+        export JAVA_HOME=$HOME/opt/jdk1.7.0_75
+        # For Android SDK/NDK
+        export PATH=$PATH:$HOME/opt/android-studio/bin
+        export ANDROID_SDK=$PATH:$HOME/Android/Sdk # Auto-installed by Android Studio
+        export PATH=$PATH:$ANDROID_SDK/tools
+        export PATH=$PATH:$ANDROID_SDK/platform-tools
+        export ANDROID_NDK=$PATH:$HOME/opt/android-ndk-r10d
+        export PATH=$PATH:$ANDROID_NDK
+
+        . /etc/bash_completion
+    fi
+
     if [ $HOST == 'UTRC' ]; then
         export PATH=$HOME/usr/bin:$PATH
         export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
@@ -93,8 +107,8 @@ if [ $PLATFORM == 'LINUX' ]; then
         export LDFLAGS="-L$HOME/usr/lib -L$HOME/usr/local/lib"
     fi  # LINUX - UTRC
 
-    if [ -f ~/usr/etc/bash_completion ]; then
-        . /usr/etc/bash_completion
+    if [ -f $HOME/usr/etc/bash_completion ]; then
+        . $HOME/usr/etc/bash_completion
     fi
 
 fi
