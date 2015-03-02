@@ -19,7 +19,6 @@ complete -o default -F _pip_completion pip
 
 # shell options
 shopt -s nocaseglob
-stty -ixon
 
 #export TERM=linux
 #eval `/usr/bin/dircolors -b ~/.dircolors`
@@ -31,8 +30,6 @@ source ~/.git-completion.bash
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\e[32;1m\]$PLATFORM: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
 
-. ~/.git-completion.bash
-
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export PATH=$HOME/bin:$PATH
@@ -42,6 +39,10 @@ export PATH=$HOME/bin:$PATH
 #############################################################
 # Platform dependent
 #############################################################
+
+if [ $HOST != "MINIPC" ]; then
+    stty -ixon      # Somehow it's causing MINIPC Ubuntu an error dialog
+fi
 
 if [ $PLATFORM == 'MAC' ]; then
     export PATH=/usr/texbin:$PATH        # for brew
@@ -59,11 +60,11 @@ if [ $PLATFORM == 'LINUX' ]; then
         export JDK_HOME=$HOME/opt/jdk1.7.0_75
         export JAVA_HOME=$HOME/opt/jdk1.7.0_75
         # For Android SDK/NDK
+        export ANDROID_SDK=$HOME/Android/Sdk # Auto-installed by Android Studio
+        export ANDROID_NDK=$HOME/opt/android-ndk-r10d
         export PATH=$PATH:$HOME/opt/android-studio/bin
-        export ANDROID_SDK=$PATH:$HOME/Android/Sdk # Auto-installed by Android Studio
         export PATH=$PATH:$ANDROID_SDK/tools
         export PATH=$PATH:$ANDROID_SDK/platform-tools
-        export ANDROID_NDK=$PATH:$HOME/opt/android-ndk-r10d
         export PATH=$PATH:$ANDROID_NDK
 
         . /etc/bash_completion
