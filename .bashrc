@@ -61,7 +61,7 @@ if [ $PLATFORM == 'LINUX' ]; then
         export JAVA_HOME=$HOME/opt/jdk1.7.0_75
         # For Android SDK/NDK
         export ANDROID_SDK=$HOME/Android/Sdk # Auto-installed by Android Studio
-        export ANDROID_NDK=$HOME/opt/android-ndk-r10d
+        export ANDROID_NDK=$HOME/opt/android-ndk
         export PATH=$PATH:$HOME/opt/android-studio/bin
         export PATH=$PATH:$ANDROID_SDK/tools
         export PATH=$PATH:$ANDROID_SDK/platform-tools
