@@ -316,7 +316,7 @@ elseif filereadable(expand("../../../../../../.vimrc.local"))
 endif
 
 set diffopt=vertical
-" set nu
+set nu
 " set fdm=marker
 
 set nocp

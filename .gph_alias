@@ -34,7 +34,7 @@ alias hv="hgtk log"
 alias hs="hg status"
 alias cal="cal -m"
 alias ccs="cc_app"
-alias grep="grep -n --color"
+alias cgrep="grep -n --color"
 
 alias diff='colordiff -u'
 alias s='screen'
