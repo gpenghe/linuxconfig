@@ -1,4 +1,8 @@
 # define PLATFORM & HOST
+# PLATFORM could be:
+#       * WIN
+#       * MAC
+#       * LINUX
 . $HOME/.myconfig
 
 ##########################################

@@ -24,6 +24,10 @@ if [ $PLATFORM == 'WIN' ]; then
     alias e="explorer"
 elif [ $PLATFORM == 'MAC' ]; then
     alias e="open"
+elif [ $PLATFORM == 'LINUX' ]; then
+    if [ $HOST == 'MINIPC' ]; then
+        alias e="nautilus"
+    fi
 fi
 
 alias vi="vim"
