@@ -45,6 +45,7 @@ if [ $HOST != "MINIPC" ]; then
 fi
 
 if [ $PLATFORM == 'MAC' ]; then
+    export EDITOR=vim
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -124,4 +125,3 @@ export CVS_RSH=ssh
 #############################################################
 # Misc
 #############################################################
-
