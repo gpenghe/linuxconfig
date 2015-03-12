@@ -1,4 +1,8 @@
 # define PLATFORM & HOST
+# PLATFORM could be:
+#       * WIN
+#       * MAC
+#       * LINUX
 . $HOME/.myconfig
 if [ -z "$PLATFORM" ] || [ -z "$HOST" ]; then
     printf '$PLATFORM and $HOST must be both defined in ~/.myconfig'
