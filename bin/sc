@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+# Simple Calculator 
+#
+# Very simple command line calculator with flexible input forat
+
+import sys
+import os
+from math import *
+
+cmd = os.path.basename(sys.argv[0]) 
+if len(sys.argv) == 1:
+    print "You need to supply at least one argument."
+    print "Examples:"
+    print "     $ %s 8.2*4+3"       % cmd
+    print "     $ %s 8.2*4 + 3"     % cmd
+    print "     $ %s sin\(8\) + 3"  % cmd
+    print "     $ %s 'sin(8) + 3'"  % cmd
+    sys.exit(-1)
+
+sys.argv.remove(sys.argv[0]) # remove the command part
+args = ''.join(sys.argv)
+print "%s = " % args
+print "     %s" % eval(args)
