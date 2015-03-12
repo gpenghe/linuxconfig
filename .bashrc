@@ -63,10 +63,13 @@ if [ $PLATFORM == 'MAC' ]; then
 fi
 if [ $PLATFORM == 'LINUX' ]; then
     export EDITOR=vim
+    export SHELL="/bin/bash"
 
     if [ $HOST == 'MINIPC' ]; then
-        export JDK_HOME=$HOME/opt/jdk1.7.0_75
-        export JAVA_HOME=$HOME/opt/jdk1.7.0_75
+        # For Java
+        export JDK_HOME=$HOME/opt/jdk
+        export JAVA_HOME=$HOME/opt/jdk
+
         # For Android SDK/NDK
         export ANDROID_SDK=$HOME/Android/Sdk # Auto-installed by Android Studio
         export ANDROID_NDK=$HOME/opt/android-ndk
