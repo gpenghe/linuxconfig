@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Simple Calculator 
 #
-# Very simple command line calculator with flexible input forat
+# Very simple command line calculator with flexible input format
 
 import sys
 import os
