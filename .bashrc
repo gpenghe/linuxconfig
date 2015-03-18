@@ -47,7 +47,7 @@ export PATH=$HOME/bin:$PATH
 # Platform dependent
 #############################################################
 
-if [ $HOST != "MINIPC" || $HOST != "MACUBUNTU" ]; then
+if [ $HOST != "MINIPC" ] || [ $HOST != "MACUBUNTU" ]; then
     stty -ixon      # Somehow it's causing MINIPC Ubuntu an error dialog
 fi
 
