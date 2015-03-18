@@ -65,6 +65,20 @@ if [ $PLATFORM == 'LINUX' ]; then
     export EDITOR=vim
     export SHELL="/bin/bash"
 
+    if [ $HOST == 'UBUNTU_VM' ]; then
+        # for TechNexion Android build
+        PATH="/home/gph/perl5/bin${PATH+:}${PATH}"; export PATH;
+        PERL5LIB="/home/gph/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+        PERL_LOCAL_LIB_ROOT="/home/gph/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+        PERL_MB_OPT="--install_base \"/home/gph/perl5\""; export PERL_MB_OPT;
+        PERL_MM_OPT="INSTALL_BASE=/home/gph/perl5"; export PERL_MM_OPT;
+
+        export PATH=$PATH:/opt/android-ndk-r7c
+
+        export USE_CCACHE=1
+        export SHELL=/bin/sh
+    fi
+
     if [ $HOST == 'MINIPC' ]; then
         # For Java
         export JDK_HOME=$HOME/opt/jdk
