@@ -1,0 +1,21 @@
+#!/bin/sh
+printf "Scanning available hosts ...\n"
+host_list=`scan_host`
+printf "Host list: \n%s\n\n" "$host_list"
+
+# creating a single line list.
+# echo changes newline to space
+host_list=`echo $host_list`     
+
+for h in $host_list; do
+    printf "Identifying hosts %s ...\n" $h
+    nmap -O $h | sed    \
+    -e "/^$/d"          \
+    -e "/^Starting/d"   \
+    -e "/^Service/d"    \
+    -e "/Nmap done/d"   \
+    -e "/^Nmap scan report for \(.*\)/d"   \
+    -e "/^Host/d"       \
+    -e "/^Not/d"
+    printf "\n"
+done

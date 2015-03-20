@@ -52,3 +52,6 @@ alias gx40='git tree2 -40'
 alias gv='git log --oneline --graph --decorate --all'
 alias gs='git status -s'
 alias gc='git cia -m "mod"'
+
+# Use current user's PATH
+alias sudo='sudo env PATH=$PATH'
