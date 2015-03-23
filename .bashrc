@@ -35,7 +35,7 @@ export PS1='[\w]$ '
 
 source ~/.git-completion.bash
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1='\[\e[32;1m\]$PLATFORM: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
+export PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
