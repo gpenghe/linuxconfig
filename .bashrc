@@ -79,7 +79,7 @@ if [ $PLATFORM == 'LINUX' ]; then
         export SHELL=/bin/sh
     fi
 
-    if [ $HOST == 'MINIPC' ]; then
+    if [ $HOST == 'MINIPC' ] || [ $HOST == 'MAC_LINUX' ]; then
         # For Java
         export JDK_HOME=$HOME/opt/jdk
         export JAVA_HOME=$HOME/opt/jdk
