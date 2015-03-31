@@ -17,7 +17,7 @@ if ! [ -d "$git_dir" ]; then
     exit -1
 fi
 
-cp -a "$*" $git_dir
+cp -a $* $git_dir
 cd $git_dir
 git add --all .
 git commit -m "New shared data: $*"
