@@ -22,6 +22,15 @@ set nobinary
 set fileformat=dos
 
 "----------------------------------------------------------
+"  Tab related
+"----------------------------------------------------------
+set tabstop=4 
+set expandtab
+set shiftwidth=4
+"set softtabstop=4       " We don't need this when expandtab is on, right?
+
+set cindent
+"----------------------------------------------------------
 "  Key mappings
 "----------------------------------------------------------
 
@@ -169,16 +178,7 @@ set is
 set hlsearch
 set ic
 set nowrapscan
-set expandtab
 
-set tabstop=4 
-if $TABSTOP == 4 
-"for Real code
-"set tabstop=4
-endif
-set softtabstop=4
-set shiftwidth=4
-set cindent sw=4
 set laststatus=1
 set fo=
 "set foldmethod=indent
