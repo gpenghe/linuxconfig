@@ -31,12 +31,15 @@ shopt -s nocaseglob
 #eval `/usr/bin/dircolors -b ~/.dircolors`
 
 export TABSTOP=4
-export PS1='[\w]$ ' 
+if [ $HOST == 'WORKSTATION_CYGWIN' ]; then
+    export PS1='[\w]$ '
+else
+    export PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
+
+fi
 
 source ~/.git-completion.bash
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
-
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export PATH=$HOME/bin:$PATH
