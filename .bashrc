@@ -31,7 +31,7 @@ shopt -s nocaseglob
 #eval `/usr/bin/dircolors -b ~/.dircolors`
 
 export TABSTOP=4
-if [ $HOST == 'WORKSTATION_CYGWIN' ]; then
+if [ $PLATFORM == 'CYGWIN' ]; then
     export PS1='[\w]$ '
 else
     export PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '

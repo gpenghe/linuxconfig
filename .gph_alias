@@ -20,7 +20,7 @@ if [ $PLATFORM == 'WIN' ]; then
     alias m='mingw32-make.exe'
 fi
 
-if [ $PLATFORM == 'WIN' ]; then
+if [ $PLATFORM == 'CYGWIN' ]; then
     alias e="explorer"
 elif [ $PLATFORM == 'MAC' ]; then
     alias e="open"
