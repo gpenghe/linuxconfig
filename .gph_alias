@@ -28,6 +28,10 @@ elif [ $PLATFORM == 'LINUX' ]; then
     if [ $HOST == 'MINIPC' ]; then
         alias e="nautilus"
     fi
+    if [ $HOST == 'UTRC' ]; then
+        alias updatedb="updatedb --database-root ~ -o ~/.update.db --require-visibility 0"
+        alias locate="locate --database ~/.update.db"
+    fi
 fi
 
 alias vi="vim"
