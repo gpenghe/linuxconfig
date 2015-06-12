@@ -54,8 +54,8 @@ map ZZ :wq<CR>
 map zz :q<CR>
 
 "TODO: improve this macro!
-map <C-S-C> :s/\(^[[:blank:]]*\)/\1#/<ESC>:noh<ESC>j
-map <C-S-D> :s/\(^[[:blank:]]*\)#/\1/<ESC>:noh<ESC>j      
+"map <C-S-C> :s/\(^[[:blank:]]*\)/\1#/<ESC>:noh<ESC>j
+"map <C-S-D> :s/\(^[[:blank:]]*\)#/\1/<ESC>:noh<ESC>j
 autocmd BufEnter *.cpp,*.c,*.h map <C-S-C> :s/\(^[[:blank:]]*\)/\1\/\//<ESC>:noh<ESC>j
 autocmd BufEnter *.cpp,*.c,*.h map <C-S-D> :s/\(^[[:blank:]]*\)\/\//\1/<ESC>:noh<ESC>j      
 autocmd BufEnter *.json set syntax=javascript
