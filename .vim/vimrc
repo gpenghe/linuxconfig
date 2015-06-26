@@ -321,3 +321,6 @@ set nu
 
 set nocp
 filetype plugin on
+
+" 2015-06-26
+set nopaste
