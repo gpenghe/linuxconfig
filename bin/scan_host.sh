@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Scan 255.255.255.0 subnet for active IPs
 
 if [ $# -eq 0 ]; then 
