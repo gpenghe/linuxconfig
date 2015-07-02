@@ -2,8 +2,8 @@
 
 # NEED sudo???
 
-SD=/dev/disk2s1
-RAW_SD=/dev/rdisk2
+SD=/dev/disk1s1
+RAW_SD=/dev/rdisk1
 
 if [ $# -ne 1 ]; then
     echo "Usage: $0 name_postfix"
