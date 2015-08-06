@@ -1,6 +1,6 @@
 #!/bin/sh
 printf "Scanning available hosts ...\n"
-host_list=`scan_host`
+host_list=`scan_host.sh $1|grep ^[1-9]`
 printf "Host list: \n%s\n\n" "$host_list"
 
 # creating a single line list.
