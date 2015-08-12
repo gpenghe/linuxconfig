@@ -44,6 +44,8 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export PATH=$HOME/bin:$PATH
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
 . ~/.gph_alias
 
 #############################################################
