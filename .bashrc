@@ -42,7 +42,7 @@ source ~/.git-completion.bash
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
-export PATH=$HOME/bin:$PATH
+export PATH=$PATH:$HOME/bin
 
 . ~/.gph_alias
 
@@ -118,13 +118,11 @@ if [ $PLATFORM == 'LINUX' ]; then
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
         # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/fs1/software/python/2.7.3/lib
 
-
         export MANPATH=$MANPATH:$HOME/usr/man:$HOME/usr/local/man
         export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
         export PKG_CONFIG_PATH=$HOME/usr/local/lib/pkgconfig:$HOME/usr/lib/pkgconfig:$PKG_CONFIG_PATH
         export PKG_CONFIG_PATH=$HOME/ffmpeg_build/lib/pkgconfig:$PKG_CONFIG_PATH
-
 
         # INCLUDE && LIBDIR
         export CPATH=$CPATH:$HOME/usr/include:$HOME/usr/local/include
@@ -156,6 +154,4 @@ if [ -e $HOME/.bashrc.host ]; then
     . $HOME/.bashrc.host
 fi
 
-# Make this the last line
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
