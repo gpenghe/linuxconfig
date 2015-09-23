@@ -17,7 +17,8 @@
     # with author
     #tree2 = log --graph --decorate --abbrev-commit --branches --tags --remotes --date=short --pretty=format:'%C(yellow)%h%Creset-%C(cyan)(%ci %C(yellow)%an)%Creset%C(bold green)%d%Creset %s %Creset'
     # without author
-    tree2 = log --graph --decorate --abbrev-commit --branches --tags --remotes --date=short --pretty=format:'%C(yellow)%h%Creset-%C(cyan)(%ai%x08%x08%x08%x08%x08%x08)%Creset%C(bold green)%d%Creset %s %Creset'
+    #tree2 = log --graph --decorate --abbrev-commit --branches --tags --remotes --date=short --pretty=format:'%C(yellow)%h%Creset-%C(cyan)(%ai%x08%x08%x08%x08%x08%x08)%Creset%C(bold green)%d%Creset %s %Creset'
+    tree2 = log --graph --decorate --abbrev-commit --tags --remotes --date=short --pretty=format:'%C(yellow)%h%Creset-%C(cyan)(%ai%x08%x08%x08%x08%x08%x08)%Creset%C(bold green)%d%Creset %s %Creset'
     ci = commit
     cia = commit -a
 [core]
