@@ -1,0 +1,67 @@
+set nocompatible	" Use Vim settings, rather then Vi settings
+set nocp
+syntax on
+filetype plugin on
+filetype indent on
+
+set statusline=%F%m%r%h%w(%L)\ \ \ \ \ [%l,%v]\ \ \ \ [%p%%]
+let loaded_matchparen = 1
+set nobinary
+set fileformat=dos
+
+" Tab related
+" ----------------------
+set tabstop=4 
+set expandtab
+set shiftwidth=4
+"set softtabstop=4       " We don't need this when expandtab is on, right?
+set cindent
+
+set splitright
+"set showbreak=>>
+
+let b:match_words = &matchpairs
+set autoindent
+"set completeopt=preview
+set showmode
+set is
+set hlsearch
+set ic
+set nowrapscan
+
+set laststatus=1
+"set foldmethod=indent
+set showmatch
+set matchtime=1
+"hi MatchParen ctermbg=gray
+"au! CursorHold *.[ch] nested exe "silent! ptag " . expand("<cword>")
+set updatetime=1000
+set ls=2
+set fileformat=dos
+set winminheight=0
+set ttymouse=xterm2     " Enable mouse support
+set diffopt=vertical
+set nu
+
+" ----------------------
+"  latex vim 
+" ----------------------
+"
+" IMPORTANT: win32 users will need to have 'shellslash' 
+" set so that latex can be called correctly.
+set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file 
+" name if you search in a singe file. This will confuse 
+" latex-suite. Set your grep program to alway generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" ----------------------
+"  plugins
+call plug#begin('~/.vim/plugged')
+Plug 'majutsushi/tagbar'
+Plug 'jasongeng/conque'
+call plug#end()
+
+" ----------------------
+"
