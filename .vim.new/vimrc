@@ -64,6 +64,7 @@ Plug 'jasongeng/conque'
 Plug 'JLimperg/Align'
 Plug 'nvie/vim-togglemouse'
 Plug 'mihais/vim-mark'      " for multiple highlights
+Plug 'klen/python-mode'
 "Plug 'scrooloose/syntastic'
 call plug#end()
 
