@@ -11,22 +11,17 @@ Plug 'mihais/vim-mark'      " for multiple highlights
 Plug 'klen/python-mode'
 "Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-sensible'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 " ===================================================
 " Plugin Settings
 " ===================================================
 
-" syntastic
+" ctrlp
 " ----------------------
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:ctrlp_map = '<C-\>p'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Python Mode
 " ----------------------
@@ -45,6 +40,17 @@ set shellslash
 " name if you search in a singe file. This will confuse 
 " latex-suite. Set your grep program to alway generate a file-name.
 set grepprg=grep\ -nH\ $*
+
+" syntastic
+" ----------------------
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 " ===================================================
 "  Non-plugins Settings
