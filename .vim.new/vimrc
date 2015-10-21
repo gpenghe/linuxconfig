@@ -3,6 +3,7 @@
 " ===================================================
 
 call plug#begin('~/.vim/plugged')
+
 Plug 'majutsushi/tagbar'
 Plug 'jasongeng/conque'
 Plug 'JLimperg/Align'
@@ -12,6 +13,8 @@ Plug 'klen/python-mode'
 "Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
+"Plug 'Valloric/YouCompleteMe'
+
 call plug#end()
 
 " ===================================================
@@ -78,7 +81,7 @@ set cindent
 " Misc
 " ----------------------
 set nobinary
-set fileformat=dos
+"set fileformat=dos
 "set completeopt=preview    " Set thsi to disable the candidate menu
 set showmode
 set hlsearch
