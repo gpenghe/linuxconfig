@@ -4,15 +4,20 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'majutsushi/tagbar'
-Plug 'jasongeng/conque'
-Plug 'JLimperg/Align'
-Plug 'nvie/vim-togglemouse'
-Plug 'mihais/vim-mark'      " for multiple highlights
-Plug 'klen/python-mode'
-"Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-sensible'
-Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-sensible'   " Set good vimrc defaults
+
+Plug 'majutsushi/tagbar'    " Usage: :tagbar
+Plug 'jasongeng/conque'     " Usage: <C-h>
+Plug 'JLimperg/Align'       " Usage: \t=
+Plug 'nvie/vim-togglemouse' " Usage: F12
+Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
+Plug 'klen/python-mode'     " :help pymode
+Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
+
+"
+" Good syntax checker, but slow when opening & saving
+"
+"Plug 'scrooloose/syntastic'    
 
 " 
 " Reason to choose neocomplete over YouCompleteMe:
