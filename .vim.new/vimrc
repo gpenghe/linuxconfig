@@ -13,6 +13,7 @@ Plug 'nvie/vim-togglemouse' " Usage: F12
 Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
 Plug 'klen/python-mode'     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
+Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 
 "
 " Good syntax checker, but slow when opening & saving
