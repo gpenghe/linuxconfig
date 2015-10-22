@@ -13,6 +13,13 @@ Plug 'klen/python-mode'
 "Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
+
+" 
+" Reason to choose neocomplete over YouCompleteMe:
+"   * Ctrl-P & Ctrl-N is totally non-sense in YouCompleteMe, while
+"     in neocomplete they are still usable
+"
+Plug 'Shougo/neocomplete.vim'
 "Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
@@ -20,6 +27,10 @@ call plug#end()
 " ===================================================
 " Plugin Settings
 " ===================================================
+
+" neocomplete
+" ----------------------
+let g:neocomplete#enable_at_startup = 1
 
 " ctrlp
 " ----------------------
