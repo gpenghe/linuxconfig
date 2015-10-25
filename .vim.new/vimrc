@@ -14,6 +14,7 @@ Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
 Plug 'klen/python-mode'     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
+Plug 'scrooloose/nerdtree'  " XXX: require ruby
 
 "
 " Good syntax checker, but slow when opening & saving
@@ -25,7 +26,7 @@ Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 "   * Ctrl-P & Ctrl-N is totally non-sense in YouCompleteMe, while
 "     in neocomplete they are still usable
 "
-Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'   "XXX: require lua
 "Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
