@@ -37,7 +37,7 @@ call plug#end()
 
 " neocomplete
 " ----------------------
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 0  " disable this for now
 
 " ctrlp
 " ----------------------
@@ -47,7 +47,14 @@ let g:ctrlp_cmd = 'CtrlP'
 " Python Mode
 " ----------------------
 let g:pymode_folding = 0
-let g:pymode_lint_ignore = "E501"
+" E203: white space before operator 
+" E211: whitespace before '('
+" E221: too many spaces
+" E222: whitespace after operator
+" E225: missing spaces around operator
+" E501: long line; 
+" W0401: import *
+let g:pymode_lint_ignore = "E203,E211,E221,E222,E225,E501,W0401"
 
 " conque
 " ----------------------
