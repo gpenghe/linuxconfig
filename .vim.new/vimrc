@@ -1,0 +1,129 @@
+" ===================================================
+"  Plugins
+" ===================================================
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'   " Set good vimrc defaults
+
+Plug 'majutsushi/tagbar'    " Usage: :tagbar
+Plug 'jasongeng/conque'     " Usage: <C-h>
+Plug 'JLimperg/Align'       " Usage: \t=
+Plug 'nvie/vim-togglemouse' " Usage: F12
+Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
+Plug 'klen/python-mode'     " :help pymode
+Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
+Plug 'easymotion/vim-easymotion'    "Usage: \\sf
+Plug 'scrooloose/nerdtree'  " XXX: require ruby
+
+"
+" Good syntax checker, but slow when opening & saving
+"
+"Plug 'scrooloose/syntastic'    
+
+" 
+" Reason to choose neocomplete over YouCompleteMe:
+"   * Ctrl-P & Ctrl-N is totally non-sense in YouCompleteMe, while
+"     in neocomplete they are still usable
+"
+Plug 'Shougo/neocomplete.vim'   "XXX: require lua
+"Plug 'Valloric/YouCompleteMe'
+
+call plug#end()
+
+" ===================================================
+" Plugin Settings
+" ===================================================
+
+" neocomplete
+" ----------------------
+let g:neocomplete#enable_at_startup = 0  " disable this for now
+
+" ctrlp
+" ----------------------
+let g:ctrlp_map = '<C-\>p'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Python Mode
+" ----------------------
+let g:pymode_folding = 0
+" E203: white space before operator 
+" E211: whitespace before '('
+" E221: too many spaces
+" E222: whitespace after operator
+" E225: missing spaces around operator
+" E501: long line; 
+" W0401: import *
+let g:pymode_lint_ignore = "E203,E211,E221,E222,E225,E501,W0401"
+
+" conque
+" ----------------------
+map <C-h> :ConqueTermVSplit bash<CR>
+
+"  latex vim 
+" ----------------------
+" IMPORTANT: win32 users will need to have 'shellslash' 
+" set so that latex can be called correctly.
+set shellslash
+" IMPORTANT: grep will sometimes skip displaying the file 
+" name if you search in a singe file. This will confuse 
+" latex-suite. Set your grep program to alway generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" syntastic
+" ----------------------
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" ===================================================
+"  Non-plugins Settings
+" ===================================================
+
+" Included in vim-sensible
+" ----------------------
+"set autoindent
+"syntax on
+"set nocompatible	" Use Vim settings, rather then Vi settings
+"set nocp
+"filetype plugin on
+"filetype indent on
+"set is
+"set laststatus=2
+
+" Tab related
+" ----------------------
+set tabstop=4 
+set expandtab
+set shiftwidth=4
+"set softtabstop=4       " We don't need this when expandtab is on, right?
+set cindent
+
+" Misc
+" ----------------------
+set nobinary
+"set fileformat=dos
+"set completeopt=preview    " Set thsi to disable the candidate menu
+set showmode
+set hlsearch
+set nowrapscan
+set showmatch
+set matchtime=1
+set updatetime=1000
+set winminheight=0
+set ttymouse=xterm2     " Enable mouse support
+set diffopt=vertical
+set splitright
+set statusline=%F%m%r%h%w(%L)\ \ \ \ \ [%l,%v]\ \ \ \ [%p%%]
+set ic
+set nu
+set scrolloff=10
+
+let loaded_matchparen = 1
+let b:match_words = &matchpairs
+

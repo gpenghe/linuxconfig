@@ -54,6 +54,7 @@ alias gx9='git tree2 -9'
 alias gx20='git tree2 -20'
 alias gx40='git tree2 -40'
 alias gv='git log --oneline --graph --decorate --all'
+#alias gs='git status -s; echo ========= ; stg series'
 alias gs='git status -s'
 alias gc='git cia -m "mod"'
 
