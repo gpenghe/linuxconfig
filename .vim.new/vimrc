@@ -11,7 +11,7 @@ Plug 'jasongeng/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
 Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
-Plug 'klen/python-mode'     " :help pymode
+"Plug 'klen/python-mode'     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 Plug 'scrooloose/nerdtree'  " XXX: require ruby
@@ -26,7 +26,7 @@ Plug 'scrooloose/nerdtree'  " XXX: require ruby
 "   * Ctrl-P & Ctrl-N is totally non-sense in YouCompleteMe, while
 "     in neocomplete they are still usable
 "
-Plug 'Shougo/neocomplete.vim'   "XXX: require lua
+"Plug 'Shougo/neocomplete.vim'   "XXX: require lua
 "Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
@@ -37,7 +37,7 @@ call plug#end()
 
 " neocomplete
 " ----------------------
-let g:neocomplete#enable_at_startup = 0  " disable this for now
+"let g:neocomplete#enable_at_startup = 0  " disable this for now
 
 " ctrlp
 " ----------------------
