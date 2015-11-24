@@ -38,8 +38,6 @@ alias vi="vim"
 alias vidiff='vi -c "set syn=diff"'
 alias vd='vi -c "set syn=diff"'
 alias rm="saferm.sh"
-alias hv="hgtk log"
-alias hs="hg status"
 alias cal="cal -m"
 alias ccs="cc_app"
 alias cgrep="grep -n --color"
@@ -48,6 +46,27 @@ alias diff='colordiff -u'
 alias s='screen'
 alias more='less -R'
 
+# hg
+alias hv="hgtk log"
+alias hs="hg status"
+alias hs2="hs -mard"
+alias hc="echo -----hs2-----; hs2; echo '-----hg qapplied-----'; hg qapplied; echo '-----hg qunapplied-----'; hg qunapplied"
+alias hl2="hg log -l 2"
+alias hl3="hg log -l 3"
+alias hl4="hg log -l 4"
+alias hl5="hg log -l 5"
+alias hl6="hg log -l 6"
+alias hl7="hg log -l 7"
+alias hl8="hg log -l 8"
+alias hl9="hg log -l 9"
+alias hl10="hg log -l 10"
+alias hl20="hg log -l 20"
+alias hd="hg diff | colordiff"
+#alias hdf="hg diff >/tmp/tmp.diff && unix2dos /tmp/tmp.diff && vi /tmp/tmp.diff"
+alias htd='hg tip -p | colordiff'
+#alias htdf='hg tip -p >/tmp/td.diff && unix2dos /tmp/td.diff && vi /tmp/td.diff'
+
+# git
 alias gx='git tree2'
 alias gx8='git tree2 -8'
 alias gx9='git tree2 -9'

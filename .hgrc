@@ -1,0 +1,27 @@
+[ui]
+username = gph
+
+[extensions]
+hgext.convert =
+extdiff =
+hgext.graphlog = 
+mq =
+color =
+
+[extdiff]
+cmd.interdiff = hg-interdiff
+
+[diff]
+git = 1
+showfunc = true
+#ignorews = true
+#ignorewsamount = true
+ignoreblanklines = true
+
+[merge-tools]
+# Override stock tool location
+kdiff3.executable = ~/bin/kdiff3
+# Specify command line
+kdiff3.args = $base $local $other -o $output
+# Give higher priority
+kdiff3.priority = 1
