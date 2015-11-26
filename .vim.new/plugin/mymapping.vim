@@ -65,7 +65,7 @@ inoremap (<cr> (<cr>)<c-o>O
 
 map ,, :A<Enter>
 
-"map ZZ :wq<CR>
-"map zz :q<CR>
+map ZZ :wq<CR>
+map zz :q<CR>
 "map ,q :q<Enter>
 "nnoremap ; :
