@@ -7,6 +7,7 @@ extdiff =
 hgext.graphlog = 
 mq =
 color =
+hgk =
 
 [extdiff]
 cmd.interdiff = hg-interdiff
