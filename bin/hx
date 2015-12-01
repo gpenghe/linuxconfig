@@ -1,1 +1,1 @@
- hg log -b `hg branch` --template '{rev} {author} {tags} {date|localdate|isodate}: {desc|strip|firstline}\n'
+ hg log -b `hg branch` --template '{rev} {author} {tags} {date|localdate|isodate}: {desc|strip|firstline}\n' $*
