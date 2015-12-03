@@ -26,3 +26,6 @@ kdiff3.executable = ~/bin/kdiff3
 kdiff3.args = $base $local $other -o $output
 # Give higher priority
 kdiff3.priority = 1
+
+[defaults]
+log = -f
