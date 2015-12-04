@@ -47,11 +47,11 @@ alias s='screen'
 alias more='less -R'
 
 # hg
-alias hv="hgtk log"
+#alias hv="hgtk log"
+alias hv="hg view"
 alias hs="hg status"
 alias hs2="hs -mard"
 alias hc="echo -----hs2-----; hs2; echo '-----hg qapplied-----'; hg qapplied; echo '-----hg qunapplied-----'; hg qunapplied"
-alias hx="hg log --template '{rev} {author} {tags} {date|localdate|isodate}: {desc|strip|firstline}\n'"
 alias hx2="hx -l 2"
 alias hx3="hx -l 3"
 alias hx4="hx -l 4"

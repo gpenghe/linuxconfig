@@ -126,4 +126,6 @@ set scrolloff=10
 
 let loaded_matchparen = 1
 let b:match_words = &matchpairs
+let &mouse="a"      " Default mouse to terminal mode
+
 
