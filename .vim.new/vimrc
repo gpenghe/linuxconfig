@@ -11,7 +11,7 @@ Plug 'jasongeng/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
 Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
-"Plug 'klen/python-mode'     " :help pymode
+Plug 'klen/python-mode'     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 Plug 'scrooloose/nerdtree'  " XXX: require ruby
