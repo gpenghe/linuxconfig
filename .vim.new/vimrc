@@ -6,15 +6,23 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'   " Set good vimrc defaults
 
-Plug 'majutsushi/tagbar'    " Usage: :tagbar
+" Use taglist instead on 2016-02-18 because vim verison on remote Linxu is too old
+" XXX: enable tagbar later
+"Plug 'majutsushi/tagbar'    " Usage: :tagbar    
+Plug 'vim-scripts/taglist.vim'    " Usage: :Tlist
+
 Plug 'jasongeng/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
 Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
-Plug 'klen/python-mode'     " :help pymode
+Plug 'klen/python-mode', {'branch': 'gh-pages'}     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
-Plug 'scrooloose/nerdtree'  " XXX: require ruby
+
+" Disable this on 2016-02-18, since
+" 1) Never used this
+" 2) Causing problem after today's update
+" Plug 'scrooloose/nerdtree'  " XXX: require ruby
 
 "
 " Good syntax checker, but slow when opening & saving
