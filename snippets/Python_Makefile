@@ -1,0 +1,13 @@
+check:
+	python -m py_compile *.py && pylint -E *.py 
+	@rm -f *.pyc
+
+test:
+	py.test
+
+clean:
+	rm -f *.pyc
+	rm -f *.txt
+	rm -f *.csv
+
+
