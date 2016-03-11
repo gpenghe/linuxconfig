@@ -4,13 +4,11 @@
 
 call plug#begin('~/.vim/plugged')
 
+if filereadable(".vimrc.local.plugged")
+    source .vimrc.local.plugged
+endif
+
 Plug 'tpope/vim-sensible'   " Set good vimrc defaults
-
-" Use taglist instead on 2016-02-18 because vim verison on remote Linxu is too old
-" XXX: enable tagbar later
-"Plug 'majutsushi/tagbar'    " Usage: :tagbar    
-Plug 'vim-scripts/taglist.vim'    " Usage: :Tlist
-
 Plug 'jasongeng/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
@@ -135,5 +133,9 @@ set scrolloff=10
 let loaded_matchparen = 1
 let b:match_words = &matchpairs
 let &mouse="a"      " Default mouse to terminal mode
+
+if filereadable(".vimrc.local.misc")
+    source .vimrc.local.misc
+endif
 
 
