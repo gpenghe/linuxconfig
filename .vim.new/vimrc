@@ -4,8 +4,8 @@
 
 call plug#begin('~/.vim/plugged')
 
-if filereadable(".vimrc.local.plugged")
-    source .vimrc.local.plugged
+if filereadable("~/.vimrc.local.plugged")
+    source ~/.vimrc.local.plugged
 endif
 
 Plug 'tpope/vim-sensible'   " Set good vimrc defaults
