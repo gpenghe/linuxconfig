@@ -13,7 +13,7 @@ Plug 'jasongeng/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
 Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
-Plug 'klen/python-mode', {'branch': 'gh-pages'}     " :help pymode
+Plug 'klen/python-mode', {'branch': 'develop'}     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 
