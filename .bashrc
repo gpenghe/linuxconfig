@@ -27,7 +27,6 @@ complete -o default -F _pip_completion pip
 # shell options
 shopt -s nocaseglob
 
-#export TERM=linux
 #eval `/usr/bin/dircolors -b ~/.dircolors`
 
 export TABSTOP=4
@@ -107,16 +106,9 @@ if [ $PLATFORM == 'LINUX' ]; then
 
         # csh copy of LD_LIBRARY_PATH
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH_COPY 
-
-        # graphviz/dot
-        #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
-        #export GVBINDIR=~/usr/lib
-
-        # OpenMP (not used since set in csh)
-        #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/software/openmpi/1.6.5/gcc/lib
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/local/lib
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
-        # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/utrc/fs1/software/python/2.7.3/lib
+        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/local/lib
+        export TERM=vt320       # to fix vim
 
         export MANPATH=$MANPATH:$HOME/usr/man:$HOME/usr/local/man
         export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
