@@ -138,4 +138,5 @@ if filereadable(".vimrc.local.misc")
     source .vimrc.local.misc
 endif
 
-
+let &colorcolumn="81"
+highlight ColorColumn ctermbg=Gray
