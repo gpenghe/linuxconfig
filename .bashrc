@@ -60,7 +60,7 @@ if [ $PLATFORM == 'MAC' ]; then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
-
+    export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
     export PLATFORM # needed on MAC
 fi
 if [ $PLATFORM == 'LINUX' ]; then
