@@ -8,7 +8,7 @@ defscrollback           8192            # default: 100
 silencewait             16              # default: 30
 bufferfile            $HOME/.screen/exchange
 hardcopydir           $HOME/.screen
-# shell                 -bash
+shell                 -bash
 caption splitonly "%{+u wk} %=%?%-w%?%{rw}%n%{m}*%{b}%f%t%?(%u)%?%{wk}%?%+w%? %{wk}%="
 sorendition +b kg # black  on bold green
 activity              "%c -> %=%{r}%n %t %{b}activity!%="
