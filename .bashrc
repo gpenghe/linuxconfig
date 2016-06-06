@@ -18,27 +18,28 @@ _pip_completion()
                    COMP_CWORD=$COMP_CWORD \
                    PIP_AUTO_COMPLETE=1 $1 ) )
 }
-complete -o default -F _pip_completion pip
 
 ##########################################
 # Configurations
 ##########################################
 
-# shell options
-shopt -s nocaseglob
+if [ "$SHELL" = "/bin/bash" ]; then
+    complete -o default -F _pip_completion pip
+    # shell options
+    shopt -s nocaseglob
+    if [ $PLATFORM = 'CYGWIN' ]; then
+        PS1='[\w]$ '
+    else
+        PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
+    fi
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    source ~/.git-completion.bash
+fi
+
 
 #eval `/usr/bin/dircolors -b ~/.dircolors`
 
 export TABSTOP=4
-if [ $PLATFORM == 'CYGWIN' ]; then
-    export PS1='[\w]$ '
-else
-    export PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
-
-fi
-
-source ~/.git-completion.bash
-export GIT_PS1_SHOWDIRTYSTATE=1
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export PATH=$PATH:$HOME/bin
@@ -53,21 +54,24 @@ if [ $HOST != "MINIPC" ] && [ $HOST != "MAC_LINUX" ]; then
     stty -ixon      # Somehow it's causing Ubuntu an error dialog
 fi
 
-if [ $PLATFORM == 'MAC' ]; then
+if [ $PLATFORM = 'MAC' ]; then
     export EDITOR=vim
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
+    if [ "$SHELL" = "bash" ]; then
+        if [ -f $(brew --prefix)/etc/bash_completion ]; then
+            . $(brew --prefix)/etc/bash_completion
+        fi
     fi
     export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
     export PLATFORM # needed on MAC
 fi
-if [ $PLATFORM == 'LINUX' ]; then
+
+if [ $PLATFORM = 'LINUX' ]; then
     export EDITOR=vim
     export SHELL="/bin/bash"
 
-    if [ $HOST == 'UBUNTU_VM' ]; then
+    if [ $HOST = 'UBUNTU_VM' ]; then
         # for TechNexion Android build
         PATH="/home/gph/perl5/bin${PATH+:}${PATH}"; export PATH;
         PERL5LIB="/home/gph/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
@@ -81,7 +85,7 @@ if [ $PLATFORM == 'LINUX' ]; then
         export SHELL=/bin/sh
     fi
 
-    if [ $HOST == 'MINIPC' ] || [ $HOST == 'MAC_LINUX' ]; then
+    if [ $HOST = 'MINIPC' ] || [ $HOST = 'MAC_LINUX' ]; then
         # For Java
         export JDK_HOME=$HOME/opt/jdk
         export JAVA_HOME=$HOME/opt/jdk
@@ -97,7 +101,7 @@ if [ $PLATFORM == 'LINUX' ]; then
         . /etc/bash_completion
     fi
 
-    if [ $HOST == 'UTRC' ]; then
+    if [ $HOST = 'UTRC' ]; then
         export PATH=$HOME/usr/bin:$PATH
         export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
         export PATH=/usr/local/share/python:$HOME/usr/local/bin:$PATH
@@ -126,8 +130,10 @@ if [ $PLATFORM == 'LINUX' ]; then
         export LDFLAGS="-L$HOME/usr/lib -L$HOME/usr/local/lib"
     fi  # LINUX - UTRC
 
-    if [ -f $HOME/usr/etc/bash_completion ]; then
-        . $HOME/usr/etc/bash_completion
+    if [ "$SHELL" = "bash" ]; then
+        if [ -f $HOME/usr/etc/bash_completion ]; then
+            . $HOME/usr/etc/bash_completion
+        fi
     fi
 
 fi

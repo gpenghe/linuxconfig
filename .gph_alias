@@ -1,6 +1,6 @@
 #alias ls="ls --color=tty"
 
-if [ $PLATFORM == 'MAC' ]; then
+if [ $PLATFORM = 'MAC' ]; then
     alias ls="gls --color -G"
     alias la="gls -A"
     alias cp="gcp -i"
@@ -13,22 +13,22 @@ else
     alias ll="ls -l"
 fi
 
-if [ $PLATFORM == 'WIN' ]; then
+if [ $PLATFORM = 'WIN' ]; then
     alias r="/c/Program\ Files/Notepad++/notepad++.exe"
     alias iar="IarIdePm.exe"
     alias dospath='cygpath -d'
     alias m='mingw32-make.exe'
 fi
 
-if [ $PLATFORM == 'CYGWIN' ]; then
+if [ $PLATFORM = 'CYGWIN' ]; then
     alias e="explorer"
-elif [ $PLATFORM == 'MAC' ]; then
+elif [ $PLATFORM = 'MAC' ]; then
     alias e="open"
-elif [ $PLATFORM == 'LINUX' ]; then
-    if [ $HOST == 'MINIPC' ]; then
+elif [ $PLATFORM = 'LINUX' ]; then
+    if [ $HOST = 'MINIPC' ]; then
         alias e="nautilus"
     fi
-    if [ $HOST == 'UTRC' ]; then
+    if [ $HOST = 'UTRC' ]; then
         alias updatedb="updatedb --database-root ~ -o ~/.update.db --require-visibility 0"
         alias locate="locate --database ~/.update.db"
     fi
