@@ -23,7 +23,7 @@ _pip_completion()
 # Configurations
 ##########################################
 
-if [ "$SHELL" = "/bin/bash" ]; then
+if [[ "$SHELL" =~ "bash" ]]; then
     complete -o default -F _pip_completion pip
     # shell options
     shopt -s nocaseglob
@@ -58,7 +58,7 @@ if [ $PLATFORM = 'MAC' ]; then
     export EDITOR=vim
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
-    if [ "$SHELL" = "bash" ]; then
+    if [[ "$SHELL" =~ "bash" ]]; then
         if [ -f $(brew --prefix)/etc/bash_completion ]; then
             . $(brew --prefix)/etc/bash_completion
         fi
@@ -130,7 +130,7 @@ if [ $PLATFORM = 'LINUX' ]; then
         export LDFLAGS="-L$HOME/usr/lib -L$HOME/usr/local/lib"
     fi  # LINUX - UTRC
 
-    if [ "$SHELL" = "bash" ]; then
+    if [[ "$SHELL" =~ "bash" ]]; then
         if [ -f $HOME/usr/etc/bash_completion ]; then
             . $HOME/usr/etc/bash_completion
         fi
