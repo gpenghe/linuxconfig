@@ -1,3 +1,10 @@
+if [ "`uname`" = "Darwin" ]; then
+    alias date='gdate'
+fi
+
+# Profiling (top part)
+let t0=$(date '+%s.%N')
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/gpenghe/.oh-my-zsh
 
@@ -49,7 +56,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(pip)
 
 # User configuration
 
@@ -86,3 +93,9 @@ source $ZSH/oh-my-zsh.sh
 #
 setopt complete_aliases
 source $HOME/.bashrc
+
+# Profiling (bottom part)
+let t1=$(date '+%s.%N')
+diff=$(( t1 - t0 ))
+startup=${diff:0:4}
+print "zsh startup time: $startup s"

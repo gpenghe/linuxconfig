@@ -6,6 +6,7 @@ if [ $PLATFORM = 'MAC' ]; then
     alias cp="gcp -i"
     alias ll="gls -l"
     alias find="gfind"
+    alias date="gdate"
 else
     alias ls="ls --color -G"
     alias la="ls -A"
