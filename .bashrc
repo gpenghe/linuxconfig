@@ -112,7 +112,8 @@ if [ $PLATFORM = 'LINUX' ]; then
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH_COPY 
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/local/lib
-        export TERM=vt320       # to fix vim
+        # export TERM=vt320       # to fix vim
+        export TERM=xterm       # to fix vim
 
         export MANPATH=$MANPATH:$HOME/usr/man:$HOME/usr/local/man
         export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
