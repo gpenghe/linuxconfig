@@ -58,6 +58,7 @@ if [ $PLATFORM = 'MAC' ]; then
     export EDITOR=vim
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
+    export PATH=/usr/local/texlive/2013/bin/x86_64-darwin:$PATH
     if [[ "$SHELL" =~ "bash" ]]; then
         if [ -f $(brew --prefix)/etc/bash_completion ]; then
             . $(brew --prefix)/etc/bash_completion
