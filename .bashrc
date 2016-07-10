@@ -44,6 +44,7 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export PATH=$PATH:$HOME/bin
 
+export TERM=linux
 . ~/.gph_alias
 
 #############################################################
@@ -56,6 +57,7 @@ fi
 
 if [ $PLATFORM = 'MAC' ]; then
     export EDITOR=vim
+    export TERM=xterm-256color
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
     export PATH=/usr/local/texlive/2013/bin/x86_64-darwin:$PATH
