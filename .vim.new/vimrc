@@ -17,6 +17,7 @@ Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
 Plug 'klen/python-mode', {'branch': 'develop'}     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
+Plug 'vim-scripts/TaskList.vim'
 
 " Disable this on 2016-02-18, since
 " 1) Never used this
