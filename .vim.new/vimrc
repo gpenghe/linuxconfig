@@ -8,6 +8,7 @@ if filereadable("~/.vimrc.local.plugged")
     source ~/.vimrc.local.plugged
 endif
 
+Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-sensible'   " Set good vimrc defaults
 Plug 'jasongeng/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
@@ -16,6 +17,7 @@ Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
 Plug 'klen/python-mode', {'branch': 'develop'}     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
+Plug 'vim-scripts/TaskList.vim'
 
 " Disable this on 2016-02-18, since
 " 1) Never used this
@@ -60,7 +62,8 @@ let g:pymode_folding = 0
 " E225: missing spaces around operator
 " E501: long line; 
 " W0401: import *
-let g:pymode_lint_ignore = "E203,E211,E221,E222,E225,E501,W0401"
+let g:pymode_lint_ignore = "E203,E211,E221,E222,E225,E501,W0401,E402"
+let g:pymode_lint_options_mccabe = { 'complexity': 40 }
 
 " conque
 " ----------------------
