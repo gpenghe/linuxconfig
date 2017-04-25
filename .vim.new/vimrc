@@ -10,7 +10,7 @@ endif
 
 Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-sensible'   " Set good vimrc defaults
-Plug 'jasongeng/conque'     " Usage: <C-h>
+Plug 'nicoraffo/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
 Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
