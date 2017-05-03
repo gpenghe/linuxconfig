@@ -50,9 +50,13 @@ export PATH=$PATH:$HOME/bin
 # Platform dependent
 #############################################################
 
-if [ $HOST != "MINIPC" ] && [ $HOST != "MAC_LINUX" ]; then
-    stty -ixon      # Somehow it's causing Ubuntu an error dialog
-fi
+# 
+# Removing the following completely since it's causing an error
+# on Ubuntu. What use is this for exactly? -gph, 2017-05-02
+#1
+#if [ $HOST != "MINIPC" ] && [ $HOST != "MAC_LINUX" ]; then
+#    stty -ixon      # Somehow it's causing Ubuntu an error dialog
+#fi
 
 if [ $PLATFORM = 'MAC' ]; then
     export EDITOR=vim
