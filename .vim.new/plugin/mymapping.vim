@@ -27,9 +27,10 @@ imap <F12>	<ESC>
 
 " Map Functions Keys
 "-------------------------------------
+map  <F7>   :NERDTreeToggle<C-M>
 map  <F5>	:bn<C-M>	" Some macros to manage the buffer of vim
 map  <F6>	:bp<C-M>	" 
-map  <F7>	:cn<C-M>	" 
+"map  <F7>	:cn<C-M>	" 
 map  <F8>	:cp<C-M>	" 
 map  <F9>   @a
 "map <F1>0
@@ -69,3 +70,4 @@ map ZZ :wq<CR>
 map zz :q<CR>
 "map ,q :q<Enter>
 "nnoremap ; :
+"
