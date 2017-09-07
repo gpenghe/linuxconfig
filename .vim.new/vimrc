@@ -24,6 +24,7 @@ Plug 'scrooloose/nerdtree'
 " 1) Never used this
 " 2) Causing problem after today's update
 " Plug 'scrooloose/nerdtree'  " XXX: require ruby
+let NERDTreeQuitOnOpen = 0
 
 "
 " Good syntax checker, but slow when opening & saving
