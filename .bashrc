@@ -44,7 +44,16 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export PATH=$PATH:$HOME/bin
 
+#############################################################
+# Setting Aliases
+#############################################################
+
 . ~/.gph_alias
+
+# Fix aliasis below
+# On Linux
+alias vi="/usr/bin/vim"
+alias vim="/usr/bin/vim"
 
 #############################################################
 # Platform dependent

@@ -36,7 +36,8 @@ elif [ $PLATFORM = 'LINUX' ]; then
     fi
 fi
 
-alias vi="vim"
+alias vi="/usr/bin/vim"
+alias vim="/usr/bin/vim"
 alias vidiff='vi -c "set syn=diff"'
 alias vd='vi -c "set syn=diff"'
 alias rm="saferm.sh"
