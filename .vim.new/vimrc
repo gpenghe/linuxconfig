@@ -10,7 +10,7 @@ endif
 
 Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-sensible'   " Set good vimrc defaults
-Plug 'jasongeng/conque'     " Usage: <C-h>
+Plug 'nicoraffo/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
 Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
@@ -18,11 +18,13 @@ Plug 'klen/python-mode', {'branch': 'develop'}     " :help pymode
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 Plug 'vim-scripts/TaskList.vim'
+Plug 'scrooloose/nerdtree'
 
 " Disable this on 2016-02-18, since
 " 1) Never used this
 " 2) Causing problem after today's update
 " Plug 'scrooloose/nerdtree'  " XXX: require ruby
+let NERDTreeQuitOnOpen = 0
 
 "
 " Good syntax checker, but slow when opening & saving

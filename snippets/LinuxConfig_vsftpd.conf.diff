@@ -1,0 +1,26 @@
+--- vsftpd.conf.orig	2017-04-27 23:51:59.093922296 -0400
++++ vsftpd.conf	2017-04-28 00:18:51.878434064 -0400
+@@ -26,7 +26,7 @@
+ local_enable=YES
+ #
+ # Uncomment this to enable any form of FTP write command.
+-#write_enable=YES
++write_enable=YES
+ #
+ # Default umask for local users is 077. You may wish to change this to 022,
+ # if your users expect that (022 is used by most other ftpd's)
+@@ -109,7 +109,7 @@
+ # You may restrict local users to their home directories.  See the FAQ for
+ # the possible risks in this before using chroot_local_user or
+ # chroot_list_enable below.
+-#chroot_local_user=YES
++chroot_local_user=YES
+ #
+ # You may specify an explicit list of local users to chroot() to their home
+ # directory. If chroot_local_user is YES, then this list becomes a list of
+@@ -148,3 +148,5 @@
+ # This option specifies the location of the RSA key to use for SSL
+ # encrypted connections.
+ rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
++
++allow_writeable_chroot=YES
