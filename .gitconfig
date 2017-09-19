@@ -5,6 +5,7 @@
 	excludesfile = /Users/gpenghe/.gitignore_global
 	autocrlf = input
     whitespace = -blank-at-eol
+	editor = vim
 [color]
 	ui = true
 [alias]
