@@ -18,13 +18,15 @@ ln -s .vim/vimrc .vimrc
 sudo apt-get install -y screen
 sudo apt-get install -y vim
 esst_apps="diffstat colordiff ctags"
-sudo apt-get install -y $misc_apps
+esst_pips="netifaces"    # for print_ip
+sudo apt-get install -y $esst_apps
+sudo pip install $esst_pips
 
-echo "Summary: installed:"
-echo "git"
-echo "vim"
-echo "screen"
-echo $esst_apps
+echo "Summary:"
+"Installed apps:"
+echo git vim screen $esst_apps
+"Installed pip packages:"
+echo $esst_pips
 
 echo ""
 
