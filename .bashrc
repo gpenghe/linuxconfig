@@ -29,6 +29,8 @@ if [[ "$SHELL" =~ "bash" ]]; then
     shopt -s nocaseglob
     if [ $PLATFORM = 'CYGWIN' ]; then
         PS1='[\w]$ '
+    elif [ $PLATFORM = 'PI' ]; then
+        PS1='[\w]$ '
     else
         PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
     fi
@@ -40,11 +42,22 @@ fi
 #eval `/usr/bin/dircolors -b ~/.dircolors`
 
 export TABSTOP=4
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+# export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export PATH=$PATH:$HOME/bin
+export EDITOR=vim
+export VISUAL=vim
+
+#############################################################
+# Setting Aliases
+#############################################################
 
 . ~/.gph_alias
+
+# Fix aliasis below
+# On Linux
+alias vi="/usr/bin/vim"
+alias vim="/usr/bin/vim"
 
 #############################################################
 # Platform dependent
@@ -60,8 +73,10 @@ export PATH=$PATH:$HOME/bin
 
 if [ $PLATFORM = 'MAC' ]; then
     export EDITOR=vim
+    export TERM=xterm-256color
     export PATH=/usr/texbin:$PATH        # for brew
     export PATH=/usr/local/bin:$PATH        # for brew
+    export PATH=/usr/local/texlive/2013/bin/x86_64-darwin:$PATH
     if [[ "$SHELL" =~ "bash" ]]; then
         if [ -f $(brew --prefix)/etc/bash_completion ]; then
             . $(brew --prefix)/etc/bash_completion
