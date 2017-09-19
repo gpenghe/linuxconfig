@@ -29,6 +29,8 @@ if [[ "$SHELL" =~ "bash" ]]; then
     shopt -s nocaseglob
     if [ $PLATFORM = 'CYGWIN' ]; then
         PS1='[\w]$ '
+    elif [ $PLATFORM = 'PI' ]; then
+        PS1='[\w]$ '
     else
         PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
     fi
