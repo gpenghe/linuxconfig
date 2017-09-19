@@ -17,11 +17,14 @@ ln -s .vim/vimrc .vimrc
 
 sudo apt-get install -y screen
 sudo apt-get install -y vim
+misc_apps="diffstat colordiff"
+sudo apt-get install -y $misc_apps
 
 echo "Summary: installed:"
 echo "git"
 echo "vim"
 echo "screen"
+echo $misc_apps
 
 echo ""
 
