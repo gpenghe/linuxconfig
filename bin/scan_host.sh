@@ -1,6 +1,8 @@
 #!/bin/bash
 # Scan 255.255.255.0 subnet for active IPs
 
+# NOT WORKING! -- 2017-10-31
+
 if [ $# -eq 0 ]; then 
     host_ip=`print_ip`
 else
@@ -20,11 +22,13 @@ ip_list=`nmap -n -sn $ip_range |             \
     -e '/MAC Address/d'             \
     | awk '{print $5;}' | sort -V | xargs`
 
+echo $ip_list
+
 for ip in  $ip_list; do
-    if ! `nslookup $ip | grep '\.lan\.' > /dev/null`; then
+    if ! `nslookup -timeout=0.1 $ip | grep '\.lan\.' > /dev/null`; then
         name="Unknown_Host"
     else
-        name=`nslookup $ip | grep '\.lan\.' | cut -d= -f 2 | cut -d. -f 1`
+        name=`nslookup -timeout=1 $ip | grep '\.lan\.' | cut -d= -f 2 | cut -d. -f 1`
     fi
     echo -e "$ip \t$name" 
 done

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	ip="192.168.1.0"
+elif [ $1 == "-h" ]; then
+	echo "Usage: scan [Any_IP_in_Subnet]"
+	echo "Example: scan 192.168.1.22"
+	exit
+else
+	ip=$1
+fi
+
+echo "Scanning range $ip/24"
+echo "--------------------------------------"
+sudo nmap -sn $ip/24 2>&1| grep -e '^Nmap scan' -e 'MAC' | sed '/^$/d' | sed 's/^Nmap scan report for \(.*\)/\1/' |sed 's/^MAC.*(\(.*\))/\1\n/'
+echo "--------------------------------------"
