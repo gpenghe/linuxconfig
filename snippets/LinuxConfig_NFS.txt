@@ -1,0 +1,23 @@
+# Step 1
+
+Ubuntu:
+sudo apt-get install nfs-kernel-server portmap
+
+# Step 2
+
+------- /etc/exports: ----------
+/tftpboot 192.168.0.0/16(rw,sync,no_subtree_check)
+# or 
+/tftpboot 192.168.0.0/16(rw,sync,no_subtree_check,insecure,no_root_squash)
+# both working
+------- /etc/exports end ----------
+
+# Step 3
+
+$ sudo exportfs -a
+
+
+# Step 4: Test
+
+$ sudo mkdir mnt
+# sudo mount 192.168.1.10:/tftpboot mnt
