@@ -1,0 +1,5 @@
+# Sync time with NTP
+# see ntp.conf
+
+# Set timezone
+ln -s /usr/share/zoneinfo/Ameria/New_York localtime
