@@ -19,6 +19,7 @@ Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 Plug 'vim-scripts/TaskList.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-abolish'
 
 " Disable this on 2016-02-18, since
 " 1) Never used this
