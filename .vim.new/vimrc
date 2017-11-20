@@ -133,7 +133,6 @@ set splitright
 set statusline=%F%m%r%h%w(%L)\ \ \ \ \ [%l,%v]\ \ \ \ [%p%%]
 set ic
 set nu
-set scrolloff=10
 set noswapfile
 set completeopt-=preview
 
