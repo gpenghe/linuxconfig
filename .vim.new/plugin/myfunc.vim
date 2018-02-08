@@ -70,5 +70,5 @@ function MyConqueStartup(term)
 
 endfunction
 
-call conque_term#register_function('after_startup', 'MyConqueStartup')
+" call conque_term#register_function('after_startup', 'MyConqueStartup')
 
