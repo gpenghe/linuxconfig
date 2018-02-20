@@ -113,7 +113,7 @@ set grepprg=grep\ -nH\ $*
 set tabstop=4 
 set expandtab
 set shiftwidth=4
-"set softtabstop=4       " We don't need this when expandtab is on, right?
+set softtabstop=4
 set cindent
 
 " Misc
@@ -149,3 +149,4 @@ let &colorcolumn="81"
 highlight ColorColumn ctermbg=Black
 
 set list       " show tabs
+set listchars=tab:▸\ ,
