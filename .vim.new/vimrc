@@ -147,3 +147,5 @@ endif
 
 let &colorcolumn="81"
 highlight ColorColumn ctermbg=Black
+
+set list       " show tabs
