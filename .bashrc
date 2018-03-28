@@ -102,9 +102,7 @@ if [ $PLATFORM = 'LINUX' ]; then
 
         export USE_CCACHE=1
         export SHELL=/bin/sh
-    fi
-
-    if [ $HOST = 'MINIPC' ] || [ $HOST = 'MAC_LINUX' ]; then
+    elif [ $HOST = 'MINIPC' ] || [ $HOST = 'MAC_LINUX' ]; then
         # For Java
         export JDK_HOME=$HOME/opt/jdk
         export JAVA_HOME=$HOME/opt/jdk
@@ -118,9 +116,7 @@ if [ $PLATFORM = 'LINUX' ]; then
         export PATH=$PATH:$ANDROID_NDK
 
         . /etc/bash_completion
-    fi
-
-    if [ $HOST = 'UTRC' ]; then
+    elif [ $HOST = 'UTRC' ]; then
         export PATH=$HOME/usr/bin:$PATH
         export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
         export PATH=/usr/local/share/python:$HOME/usr/local/bin:$PATH
@@ -148,12 +144,8 @@ if [ $PLATFORM = 'LINUX' ]; then
         export CFLAGS="-I$HOME/usr/include -I$HOME/usr/local/include"
         export CPPFLAGS="$CFLAGS"
         export LDFLAGS="-L$HOME/usr/lib -L$HOME/usr/local/lib"
-    fi  # LINUX - UTRC
-
-    if [[ "$SHELL" =~ "bash" ]]; then
-        if [ -f $HOME/usr/etc/bash_completion ]; then
-            . $HOME/usr/etc/bash_completion
-        fi
+    else
+        . /etc/bash_completion
     fi
 
 fi
