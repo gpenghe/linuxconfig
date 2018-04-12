@@ -1,0 +1,1 @@
+ldapsearch -h usdafsmdcpw02.sncorp.smith-nephew.com -w passwordNotShown -D "CN=Smith\, Will,OU=Capital,OU=Users,OU=US Andover (MMP),OU=Site OUs,OU=NA Managed Objects,DC=sncorp,DC=smith-nephew,DC=com" -b "OU=Capital,OU=Users,OU=US Andover (MMP),OU=Site OUs,OU=NA Managed Objects,DC=sncorp,DC=smith-nephew,DC=com" "(cn=Will Smith)"
