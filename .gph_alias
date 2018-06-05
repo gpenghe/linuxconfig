@@ -1,3 +1,7 @@
+alias t1='tree -C -L 1'
+alias t2='tree -C -L 2'
+alias t3='tree -C -L 3'
+
 #alias ls="ls --color=tty"
 
 if [ $PLATFORM = 'MAC' ]; then
@@ -42,6 +46,7 @@ alias rm="saferm.sh"
 alias cal="cal -m"
 alias ccs="cc_app"
 alias cgrep="grep -n --color"
+alias grep="grep -n --color"
 
 alias diff='colordiff -u'
 alias s='screen'
