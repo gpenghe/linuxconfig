@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+bitbake-layers show-recipes "*-image-*" | \grep image

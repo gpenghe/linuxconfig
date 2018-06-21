@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+img="$1"   # such as core-image-base
+result=$img.packages
+(bitbake -g $img && cat recipe-depends.dot | \grep -v -e '-native' | \grep -v digraph | \grep -v -e '-image' | awk '{print $1}' | sort | uniq) > $result
+echo "result is in $result"
