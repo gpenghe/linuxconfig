@@ -71,3 +71,4 @@ bindkey -k F1	#F11
 bindkey -k F2	#F12
 backtick 1 0 0 $HOME/bin/print_ip
 hardstatus alwayslastline "%{bw}%1` %= %w %=| %m-%d %c:%s %?"
+bind R eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"
