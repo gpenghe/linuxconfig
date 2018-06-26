@@ -163,6 +163,9 @@ export CVS_RSH=ssh
 if [ -e $HOME/.bashrc.host ]; then
     . $HOME/.bashrc.host
 fi
+if [ -e $HOME/.bashrc.local ]; then
+    . $HOME/.bashrc.local
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
