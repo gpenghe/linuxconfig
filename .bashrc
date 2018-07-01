@@ -64,11 +64,10 @@ alias vim="/usr/bin/vim"
 #############################################################
 
 # 
-# Removing the following completely since it's causing an error
-# on Ubuntu. What use is this for exactly? -gph, 2017-05-02
-#1
+# Removing the following completely since it's causing an warning on Ubuntu:
+# "stty: 'standard input': Inappropriate ioctl for device"
 #if [ $HOST != "MINIPC" ] && [ $HOST != "MAC_LINUX" ]; then
-#    stty -ixon      # Somehow it's causing Ubuntu an error dialog
+#    stty -ixon
 #fi
 
 if [ $PLATFORM = 'MAC' ]; then
