@@ -28,3 +28,28 @@
         "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
     }
 ]
+(c_cpp_properties.json)
+{
+    "configurations": [
+        {
+            "name": "ARMv7l",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceRoot}",
+                "${workspaceRoot}/dependencies",
+                "${workspaceRoot}/dependencies/googletest/goolgetest/include",
+                "${CTBGCC}/arm-linux-gnueabihf/include/c++/7.3.1",
+                "${CTBGCC}/arm-linux-gnueabihf/include/c++/7.3.1/arm-linux-gnueabihf",
+                "${CTBGCC}/lib/gcc/arm-linux-gnueabihf/7.3.1/include",
+                "${CTBGCC}/arm-linux-gnueabihf/libc/usr/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "__ARM_PCS_VFP"
+            ],
+            "cStandard": "c99",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
