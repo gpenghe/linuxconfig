@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.9)
+project(discovery_service)
+
+set(CMAKE_CXX_STANDARD 11)
+
+set(CMAKE_C_FLAGS "-m32 -I. -Wall -Wextra")
+add_compile_options(-Wno-unused-parameter)
+add_compile_options(-Wno-unknown-pragmas)
+
+add_executable(dsc_client
+        dsc.c
+        dsc.h
+        dsc_client.c
+        util.c
+        )
+
+add_executable(dsc_manager
+        dsc.c
+        dsc.h
+        dsc_manager.c
+        util.c
+        )
+
+target_link_libraries(dsc_client pthread)
+target_link_libraries(dsc_manager pthread)
