@@ -1,0 +1,30 @@
+(User Settings)
+{
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "workbench.editor.closeEmptyGroups": false,
+      "editor.hover.delay": 600,
+    "telemetry.enableCrashReporter": false,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "terminal.integrated.shell.windows": "C:\\cygwin64\\bin\\bash.exe",
+    "gitlens.gitExplorer.files.layout": "list",
+    "editor.minimap.enabled": false
+}
+(keybindings.json)
+[
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+    }
+]
