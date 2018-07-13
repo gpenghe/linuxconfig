@@ -151,3 +151,6 @@ highlight ColorColumn ctermbg=gray
 
 set list       " show tabs
 set listchars=tab:▸\ ,
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
