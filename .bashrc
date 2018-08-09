@@ -27,13 +27,8 @@ if [[ "$SHELL" =~ "bash" ]]; then
     complete -o default -F _pip_completion pip
     # shell options
     shopt -s nocaseglob
-    if [ $PLATFORM = 'CYGWIN' ]; then
-        PS1='[\w]$ '
-    elif [ $PLATFORM = 'PI' ]; then
-        PS1='[\w]$ '
-    else
-        PS1='\[\e[32;1m\]$HOST: \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
-    fi
+    PS1='\[\e[32;1m\]$(hostname): \[\e[36;1m\]\w\[\e[32;1m\]\[\e[0m\]>\n\$ '
+    [[ -d $HOME/.git ]] && PS1='\[\e[32;1m\]$(hostname): \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
     export GIT_PS1_SHOWDIRTYSTATE=1
     source ~/.git-completion.bash
 fi
