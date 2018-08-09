@@ -23,6 +23,13 @@ _pip_completion()
 # Configurations
 ##########################################
 
+function prompt_command {
+    local ret="$?"
+    errmsg=''
+    [[ $ret -ne 0 ]] && errmsg="->($(printf '%x' $ret))"
+    ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
+}
+
 if [[ "$SHELL" =~ "bash" ]]; then
     complete -o default -F _pip_completion pip
     # shell options
@@ -31,7 +38,8 @@ if [[ "$SHELL" =~ "bash" ]]; then
     export GIT_PS1_SHOWUNTRACKEDFILES=1
     export GIT_PS1_SHOWSTASHSTATE=1
     export GIT_PS1_SHOWUPSTREAM=auto
-    PS1='\[\e[32;1m\]$(hostname): \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
+    PROMPT_COMMAND=prompt_command
+    PS1='\[\e[32;1m\]$(hostname):\e[34;1m [$ut] \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[>\e[31;1m$errmsg\e[0m\]\n\$ '
     source ~/.git-completion.bash
 fi
 
@@ -184,4 +192,4 @@ export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
 # Force prompt to write history after every command.
 # http://superuser.com/questions/20900/bash-history-loss
-export PROMPT_COMMAND="history -a; history -c; history -r; ${PROMPT_COMMAND}"
+export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -c; history -r;"
