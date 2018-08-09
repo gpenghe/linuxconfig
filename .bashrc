@@ -27,9 +27,11 @@ if [[ "$SHELL" =~ "bash" ]]; then
     complete -o default -F _pip_completion pip
     # shell options
     shopt -s nocaseglob
-    PS1='\[\e[32;1m\]$(hostname): \[\e[36;1m\]\w\[\e[32;1m\]\[\e[0m\]>\n\$ '
-    [[ -d $HOME/.git ]] && PS1='\[\e[32;1m\]$(hostname): \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
     export GIT_PS1_SHOWDIRTYSTATE=1
+    export GIT_PS1_SHOWUNTRACKEDFILES=1
+    export GIT_PS1_SHOWSTASHSTATE=1
+    export GIT_PS1_SHOWUPSTREAM=auto
+    PS1='\[\e[32;1m\]$(hostname): \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " (%s)")\[\e[0m\]>\n\$ '
     source ~/.git-completion.bash
 fi
 
