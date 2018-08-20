@@ -93,3 +93,6 @@ alias gc='git cia -m "mod"'
 
 # Use current user's PATH
 alias sudo='sudo env PATH=$PATH'
+
+alias ccat='highlight --force -O ansi'
+alias dog='highlight --force -O ansi'
