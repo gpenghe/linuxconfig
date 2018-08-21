@@ -25,10 +25,13 @@ if [ $PLATFORM = 'WIN' ]; then
     alias m='mingw32-make.exe'
 fi
 
+alias s='screen'
+
 if [ $PLATFORM = 'CYGWIN' ]; then
     alias e="explorer"
 elif [ $PLATFORM = 'MAC' ]; then
     alias e="open"
+    alias s='tmux'
 elif [ $PLATFORM = 'LINUX' ]; then
     alias e="nautilus"
     if [ $HOST = 'UTRC' ]; then
@@ -48,7 +51,6 @@ alias cgrep="grep -n --color"
 alias grep="grep -n --color"
 
 alias diff='colordiff -u'
-alias s='screen'
 alias more='less -R'
 
 # hg
