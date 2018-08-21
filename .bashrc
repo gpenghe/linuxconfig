@@ -27,7 +27,11 @@ function prompt_command {
     local ret="$?"
     errmsg=''
     [[ $ret -ne 0 ]] && errmsg="->($(printf '%x' $ret))"
-    ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
+    if [[ $(uname) == 'Darwin' ]]; then
+        ut=$(uptime | awk '{print $10}')
+    else
+        ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
+    fi
 }
 
 if [[ "$SHELL" =~ "bash" ]]; then
