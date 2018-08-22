@@ -111,10 +111,11 @@ set grepprg=grep\ -nH\ $*
 
 " Tab related
 " ----------------------
-set tabstop=4 
-set expandtab
+set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
+set smarttab
 set cindent
 
 " Misc
