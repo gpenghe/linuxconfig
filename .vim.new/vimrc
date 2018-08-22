@@ -20,6 +20,7 @@ Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 Plug 'vim-scripts/TaskList.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-abolish'
+Plug 'embear/vim-localvimrc'
 
 " Disable this on 2016-02-18, since
 " 1) Never used this
