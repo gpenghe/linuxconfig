@@ -94,6 +94,8 @@ set grepprg=grep\ -nH\ $*
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 
+let g:localvimrc_ask=0
+
 " ===================================================
 "  Non-plugins Settings
 " ===================================================
