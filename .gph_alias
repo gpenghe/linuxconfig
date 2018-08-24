@@ -34,10 +34,8 @@ elif [ $PLATFORM = 'MAC' ]; then
     alias s='tmux'
 elif [ $PLATFORM = 'LINUX' ]; then
     alias e="nautilus"
-    if [ $HOST = 'UTRC' ]; then
-        alias updatedb="updatedb --database-root ~ -o ~/.update.db --require-visibility 0"
-        alias locate="locate --database ~/.update.db"
-    fi
+    # Use current user's PATH
+    alias sudo='sudo env PATH=$PATH'
 fi
 
 alias vi="/usr/bin/vim"
@@ -91,6 +89,3 @@ alias gv='git log --oneline --graph --decorate --all'
 #alias gs='git status -s; echo ========= ; stg series'
 alias gs='git status -s'
 alias gc='git cia -m "mod"'
-
-# Use current user's PATH
-alias sudo='sudo env PATH=$PATH'

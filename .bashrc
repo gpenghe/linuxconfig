@@ -124,34 +124,6 @@ if [ $PLATFORM = 'LINUX' ]; then
         export PATH=$PATH:$ANDROID_NDK
 
         . /etc/bash_completion
-    elif [ $HOST = 'UTRC' ]; then
-        export PATH=$HOME/usr/bin:$PATH
-        export PATH=/Users/gpenghe/QtSDK/Desktop/Qt/4.8.1/gcc/bin:$PATH
-        export PATH=/usr/local/share/python:$HOME/usr/local/bin:$PATH
-        export PATH=$PATH:/sbin:/usr/sbin
-        export PATH=$PATH:$HOME/.local/bin
-
-        # csh copy of LD_LIBRARY_PATH
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH_COPY 
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/lib
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/local/lib
-        # export TERM=vt320       # to fix vim
-        export TERM=xterm       # to fix vim
-
-        export MANPATH=$MANPATH:$HOME/usr/man:$HOME/usr/local/man
-        export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
-
-        export PKG_CONFIG_PATH=$HOME/usr/local/lib/pkgconfig:$HOME/usr/lib/pkgconfig:$PKG_CONFIG_PATH
-        export PKG_CONFIG_PATH=$HOME/ffmpeg_build/lib/pkgconfig:$PKG_CONFIG_PATH
-
-        # INCLUDE && LIBDIR
-        export CPATH=$CPATH:$HOME/usr/include:$HOME/usr/local/include
-        export LIBPATH=$LIBPATH:$HOME/usr/lib:$HOME/usr/local/lib
-
-        # for ./configure
-        export CFLAGS="-I$HOME/usr/include -I$HOME/usr/local/include"
-        export CPPFLAGS="$CFLAGS"
-        export LDFLAGS="-L$HOME/usr/lib -L$HOME/usr/local/lib"
     else
         . /etc/bash_completion
     fi
