@@ -1,0 +1,9 @@
+set(GOOGLETEST_DIR ${CMAKE_SOURCE_DIR}/deps/googletest)
+if(NOT EXISTS ${GOOGLETEST_DIR})
+    find_package(Git REQUIRED)
+    message(STATUS "Downloading googletest")
+    execute_process(
+        COMMAND ${GIT_EXECUTABLE} clone https://github.com/google/googletest ${GOOGLETEST_DIR}
+    )
+endif()
+set(gtest_SOURCE_DIR ${GOOGLETEST_DIR}/googletest)

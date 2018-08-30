@@ -1,0 +1,4 @@
+execute_process (
+    message(STATUS "Patching zeromq")
+    COMMAND sed -i '/option.BUILD_SHARED/ s/ON/OFF/' CMakeLists.txt
+    )

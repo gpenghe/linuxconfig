@@ -1,0 +1,4 @@
++    #
++    # Quick dirty hack to disable zeromq install...
++    #
++    sed -i '/zeromq/d' cmake_install.cmake
