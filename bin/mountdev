@@ -1,1 +1,1 @@
-mount |grep '^/dev'
+mount | \grep '^/dev' | column -t | less -SEX
