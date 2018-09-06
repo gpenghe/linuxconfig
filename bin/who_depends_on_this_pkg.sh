@@ -1,0 +1,1 @@
+aptitude why $1
