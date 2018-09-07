@@ -46,7 +46,6 @@ alias rm="saferm.sh"
 alias cal="cal -m"
 alias ccs="cc_app"
 alias cgrep="grep -n --color"
-alias grep="grep -n --color"
 
 alias diff='colordiff -u'
 alias more='less -R'
