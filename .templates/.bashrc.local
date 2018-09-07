@@ -1,0 +1,27 @@
+export PATH=/opt/arm2009q1/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
+export PATH=/opt/gcc-linaro-7.3.1-2018.05-i686_arm-linux-gnueabihf/bin:$PATH
+export PATH=$HOME/work_bin:$PATH
+export PATH=$HOME/opt/jdk1.8.0_161/bin:$PATH
+
+export JAVAHOME=$HOME/opt/jdk1.8.0_161
+export TERM=linux
+
+export PATH=$HOME/work_bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/usr/bin:$PATH
+git config --global user.name "Penghe Geng"
+git config --global user.email "penghe.geng@smith-nephew.com"
+
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+
+alias dog='vimcat'
+alias ccat='vimcat'
+alias colorcat='vimcat'
+alias color_cat='vimcat'
+alias cocat='vimcat'
+
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+export PATH=$PATH:/usr/local/go/bin
