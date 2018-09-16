@@ -20,7 +20,7 @@ Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 Plug 'vim-scripts/TaskList.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-abolish'
-Plug 'embear/vim-localvimrc'
+" Plug 'embear/vim-localvimrc'    # causing problems for Yocto build?
 Plug 'scrooloose/nerdcommenter'
 
 " Disable this on 2016-02-18, since
