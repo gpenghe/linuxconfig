@@ -11,8 +11,6 @@
 #include <assert.h>
 #include <sys/time.h>
 
-#include "common.h"
-
 /* BEGIN jcs 3/30/05 */
 
 #define SOCKET_ERROR -1
@@ -24,7 +22,7 @@ int main(int argc, char *argv[])
     struct hostent *h;
     int sleep_us;
     int adjusted_sleep_us;
-    char txbuf[MAX_MSG];
+    char txbuf[80];
     unsigned int seq, cmd;
     int packets = 0;
     int forever = 0;

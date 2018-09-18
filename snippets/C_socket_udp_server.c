@@ -11,14 +11,12 @@
 #include <unistd.h>             /* close() */
 #include <string.h>             /* memset() */
 
-#include "common.h"
-
 int main(int argc, char *argv[])
 {
     int sd, rc, n, flags;
     unsigned int cliLen;
     struct sockaddr_in cliAddr, servAddr;
-    char msg[MAX_MSG];
+    char msg[80];
     int listen_port = -1;
     int verbose = 0;
 
@@ -59,10 +57,10 @@ int main(int argc, char *argv[])
     {
         unsigned int seq;
         unsigned int cmd;
-        memset(msg, 0x0, MAX_MSG);
+        memset(msg, 0x0, 80);
 
         cliLen = sizeof(cliAddr);
-        n = recvfrom(sd, msg, MAX_MSG, flags, (struct sockaddr *) &cliAddr, &cliLen);
+        n = recvfrom(sd, msg, 80, flags, (struct sockaddr *) &cliAddr, &cliLen);
 
         if (n < 0) {
             printf("%s: cannot receive data \n", argv[0]);
