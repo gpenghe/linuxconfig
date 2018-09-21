@@ -26,6 +26,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 " Disable this on 2016-02-18, since
 " 1) Never used this
 " 2) Causing problem after today's update
