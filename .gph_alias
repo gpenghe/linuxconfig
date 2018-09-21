@@ -40,6 +40,7 @@ fi
 
 alias vi="/usr/bin/vim"
 alias vim="/usr/bin/vim"
+alias vif='vim $(fzf --height 20%)'
 alias vidiff='vi -c "set syn=diff"'
 alias vd='vi -c "set syn=diff"'
 alias rm="saferm.sh"
