@@ -3,7 +3,7 @@
 	email = penghe.geng@smith-nephew.com
 [core]
 	excludesfile = /Users/gpenghe/.gitignore_global
-	autocrlf = false
+	autocrlf = input
     whitespace = -blank-at-eol
 	editor = vim
 [color]
