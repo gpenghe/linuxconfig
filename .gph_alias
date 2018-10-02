@@ -38,9 +38,12 @@ elif [ $PLATFORM = 'LINUX' ]; then
     alias sudo='sudo env PATH=$PATH'
 fi
 
-alias vi="/usr/bin/vim"
-alias vim="/usr/bin/vim"
-alias vif='vim $(fzf --height 20%)'
+if nvim -h >/dev/null; then
+    alias vi="/usr/bin/nvim"
+else
+    alias vi="/usr/bin/vim"
+fi
+alias vif='vi $(fzf --height 20%)'
 alias vidiff='vi -c "set syn=diff"'
 alias vd='vi -c "set syn=diff"'
 alias rm="saferm.sh"
