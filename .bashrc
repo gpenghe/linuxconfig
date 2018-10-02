@@ -62,7 +62,7 @@ export VISUAL=vim
 # Setting Aliases
 #############################################################
 
-. ~/.gph_alias
+. $HOME/.gph_alias
 
 # Fix aliasis below
 # On Linux
