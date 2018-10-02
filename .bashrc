@@ -126,7 +126,7 @@ if [ $PLATFORM = 'LINUX' ]; then
 
         . /etc/bash_completion
     else
-        . /etc/bash_completion
+        [[ -f /etc/bash_completion ]] && . /etc/bash_completion
     fi
 
 fi
