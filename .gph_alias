@@ -38,7 +38,7 @@ elif [ $PLATFORM = 'LINUX' ]; then
     alias sudo='sudo env PATH=$PATH'
 fi
 
-if nvim -h >/dev/null; then
+if nvim -h &>/dev/null; then
     alias vi="/usr/bin/nvim"
 else
     alias vi="/usr/bin/vim"
