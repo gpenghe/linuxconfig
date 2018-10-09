@@ -64,11 +64,6 @@ export VISUAL=vim
 
 . $HOME/.gph_alias
 
-# Fix aliasis below
-# On Linux
-alias vi="/usr/bin/vim"
-alias vim="/usr/bin/vim"
-
 #############################################################
 # Platform dependent
 #############################################################
@@ -171,3 +166,5 @@ export HISTFILE=~/.bash_eternal_history
 # Force prompt to write history after every command.
 # http://superuser.com/questions/20900/bash-history-loss
 export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -c; history -r;"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
