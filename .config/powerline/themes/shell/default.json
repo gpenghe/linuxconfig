@@ -23,7 +23,7 @@
             {
                 "function": "powerline.segments.common.env.virtualenv",
                 "draw_soft_divider": false,
-                "after": " ",
+                "after": "",
                 "before": "ⓔ ",
                 "priority": 50
             }
