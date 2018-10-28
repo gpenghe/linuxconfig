@@ -1,0 +1,31 @@
+#!/bin/bash
+# fake apt on Arch Linux
+
+usage() {
+    echo "Usage: archapt <install package/update/upgrade>"
+}
+
+if [[ $# -eq 0 || $1 == "-h" ]] ; then
+    usage
+    exit 0
+fi
+verb=$1
+shift 1
+case $verb in
+    install)
+        cmd="sudo pacman -S $@"
+        ;;
+    update)
+        cmd="sudo pacman -Syy"
+        ;;
+    upgrade)
+        cmd="sudo pacman -Syu"
+        ;;
+    *)
+        echo "Unknow verb: $verb"
+        usage
+        exit 1
+        ;;
+esac
+echo "Running: $cmd"
+eval $cmd

@@ -92,3 +92,8 @@ alias gv='git log --oneline --graph --decorate --all'
 #alias gs='git status -s; echo ========= ; stg series'
 alias gs='git status -s'
 alias gc='git cia -m "mod"'
+
+# "apt" for arch linux
+if pacman -h &>/dev/null; then
+    alias apt='archapt'
+fi
