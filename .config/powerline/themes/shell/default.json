@@ -7,6 +7,10 @@
                         "function": "powerline.segments.shell.mode"
                     },
                     {
+                        "function": "powerline.segments.common.env.user",
+                        "priority": 30
+                    },
+                    {
                         "function": "powerline.segments.common.sys.cpu_load_percent",
                         "priority": 75
                     },
@@ -49,8 +53,10 @@
         ],
         "left": [
             {
-                "function": "powerline.segments.common.env.user",
-                "priority": 30
+                "type":     "string",
+                "contents":  "$",
+                "highlight_groups": ["dollar","cwd"],
+                "priority": 10
             }
         ]
     }
