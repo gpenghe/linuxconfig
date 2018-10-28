@@ -1,50 +1,56 @@
 {
     "segments": {
-        "left": [
+        "above": [
             {
-                "function": "powerline.segments.shell.mode"
-            },
+                "left": [
+                    {
+                        "function": "powerline.segments.shell.mode"
+                    },
+                    {
+                        "function": "powerline.segments.common.sys.cpu_load_percent",
+                        "priority": 75
+                    },
+                    {
+                        "function": "powerline.segments.common.time.date",
+                        "priority": 60,
+                        "args": {
+                            "format": "%Y-%m-%d %H:%M"
+                        }
+                    },
+                    {
+                        "function": "powerline.segments.common.net.external_ip",
+                        "priority": 70
+                    },
+                    {
+                        "function": "powerline.segments.shell.cwd",
+                        "priority": 10
+                    },
+                    {
+                        "function": "powerline_gitstatus.gitstatus",
+                        "priority": 40
+                    },
+                    {
+                        "function": "powerline.segments.common.env.virtualenv",
+                        "draw_soft_divider": false,
+                        "after": "",
+                        "before": "ⓔ ",
+                        "priority": 50
+                    },
+                    {
+                        "function": "powerline.segments.shell.jobnum",
+                        "priority": 10
+                    },
+                    {
+                        "function": "powerline.segments.shell.last_status",
+                        "priority": 10
+                    }
+                ]
+            }
+        ],
+        "left": [
             {
                 "function": "powerline.segments.common.env.user",
                 "priority": 30
-            },
-            {
-                "function": "powerline.segments.common.sys.cpu_load_percent",
-                "priority": 75
-            },
-            {
-                "function": "powerline.segments.common.time.date",
-                "priority": 60,
-                "args": {
-                    "format": "%Y-%m-%d %H:%M:%S"
-                }
-            },
-            {
-                "function": "powerline.segments.common.net.external_ip",
-                "priority": 70
-            },
-            {
-                "function": "powerline.segments.shell.cwd",
-                "priority": 10
-            },
-            {
-                "function": "powerline_gitstatus.gitstatus",
-                "priority": 40
-            },
-            {
-                "function": "powerline.segments.common.env.virtualenv",
-                "draw_soft_divider": false,
-                "after": "",
-                "before": "ⓔ ",
-                "priority": 50
-            },
-            {
-                "function": "powerline.segments.shell.jobnum",
-                "priority": 10
-            },
-            {
-                "function": "powerline.segments.shell.last_status",
-                "priority": 10
             }
         ]
     }
