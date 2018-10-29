@@ -14,7 +14,14 @@ Plug 'nicoraffo/conque'     " Usage: <C-h>
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
 Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
-Plug 'klen/python-mode', {'branch': 'develop'}     " :help pymode
+
+" the current develop branch breaks for python 3.7.
+" Workaround: use a 3rd party fix, which though will break python < 3.4
+" 2018-10-29
+"
+" Plug 'klen/python-mode', {'branch': 'develop'}     " :help pymode
+Plug 'riher/python-mode', {'branch': 'fix/py3-importlib'}     " :help pymode
+
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 Plug 'vim-scripts/TaskList.vim'
