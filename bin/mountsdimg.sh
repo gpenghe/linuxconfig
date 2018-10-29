@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 
 img=$1
-dev=$(sudo losetup --find --show --read-only --partscan $img)
+if [[ $2 == "rw" ]]; then
+    echo "Mounting Read/Write"
+    OPT=""
+else
+    echo "Mounting Read-only"
+    OPT="--read-only"
+fi
+
+dev=$(sudo losetup --find --show --partscan $img)
+
 [ -z $dev ] && exit 1
 boot_dir="./boot"
 root_dir="./root"
