@@ -93,6 +93,7 @@ fi
 if [ $PLATFORM = 'LINUX' ]; then
     export EDITOR=vim
     export SHELL="/bin/bash"
+    export TERM=linux
 
     if [ $HOST = 'UBUNTU_VM' ]; then
         # for TechNexion Android build
@@ -167,4 +168,9 @@ export HISTFILE=~/.bash_eternal_history
 # http://superuser.com/questions/20900/bash-history-loss
 export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -c; history -r;"
 
+# fuzzy finder for Ctrl-R
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+# fuzzy cd for j
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh

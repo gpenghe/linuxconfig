@@ -97,3 +97,9 @@ alias gc='git cia -m "mod"'
 if pacman -h &>/dev/null; then
     alias apt='archapt'
 fi
+
+alias dog='vimcat'
+alias ccat='vimcat'
+alias colorcat='vimcat'
+alias color_cat='vimcat'
+alias cocat='vimcat'
