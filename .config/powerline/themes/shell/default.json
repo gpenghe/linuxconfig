@@ -22,7 +22,10 @@
                         }
                     },
                     {
-                        "function": "powerline.segments.common.net.external_ip",
+                        "function": "powerline.segments.common.net.internal_ip",
+                        "args": {
+                            "interface": "default_gateway"
+                        },
                         "priority": 70
                     },
                     {
