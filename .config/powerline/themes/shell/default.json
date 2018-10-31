@@ -15,20 +15,6 @@
                         "priority": 75
                     },
                     {
-                        "function": "powerline.segments.common.time.date",
-                        "priority": 60,
-                        "args": {
-                            "format": "%Y-%m-%d %H:%M"
-                        }
-                    },
-                    {
-                        "function": "powerline.segments.common.net.internal_ip",
-                        "args": {
-                            "interface": "default_gateway"
-                        },
-                        "priority": 70
-                    },
-                    {
                         "function": "powerline.segments.shell.cwd",
                         "priority": 10
                     },
