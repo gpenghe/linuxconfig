@@ -1,0 +1,11 @@
+[Unit]
+Description=DHCP Server
+After=network.target ws_ap.service
+
+[Service]
+ExecStartPre=/sbin/ifconfig wlan0 192.168.3.1
+ExecStartPre=-/usr/bin/killall udhcpd
+ExecStart=/usr/sbin/udhcpd -f /etc/udhcpd.conf
+
+[Install]
+WantedBy=multi-user.target
