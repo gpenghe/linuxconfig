@@ -1,0 +1,9 @@
+[Unit]
+Description=Dropbox Daemon
+After=network.target
+
+[Service]
+ExecStart=/home/gph/.dropbox-dist/dropboxd
+
+[Install]
+WantedBy=multi-user.target
