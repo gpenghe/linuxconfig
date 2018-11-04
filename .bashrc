@@ -173,7 +173,11 @@ export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -c; history -r;"
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 # fuzzy cd for j
+# on Ubuntu:
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+# on Arch Linux
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+
 
 # last line
 true  # always returns 0
