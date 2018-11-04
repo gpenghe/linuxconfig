@@ -174,3 +174,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 
 # fuzzy cd for j
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+
+# last line
+true  # always returns 0
