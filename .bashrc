@@ -33,6 +33,9 @@ function prompt_command {
         ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
     fi
     tm=$(date +"%m-%d %H:%M:%S")
+    jobmsg=''
+    jobnum=$(jobs|wc -l)
+    [[ $jobnum -ne 0 ]] && jobmsg="[$jobnum]"
 }
 
 if [[ "$SHELL" =~ "bash" ]]; then
@@ -44,7 +47,7 @@ if [[ "$SHELL" =~ "bash" ]]; then
     export GIT_PS1_SHOWSTASHSTATE=1
     export GIT_PS1_SHOWUPSTREAM=auto
     PROMPT_COMMAND=prompt_command
-    PS1='\[\e[32;1m\]$(hostname):\e[36;1m $tm\e[34;1m $ut \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[31;1m$errmsg\e[0m\]\n\$ '
+    PS1='\[\e[32;1m\]$(hostname):\e[36;1m $tm\e[34;1m $ut \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
     source ~/.git-completion.bash
 fi
 
