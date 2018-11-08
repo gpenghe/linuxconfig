@@ -1,0 +1,7 @@
+# Machine-generated file - use setup menu in minicom to change parameters.
+pu port             /dev/ttyUSB2
+pu escape-key       ^@
+pu rtscts           No
+pu histlines        5000
+pu askdndir         Yes
+pu linewrap         Yes
