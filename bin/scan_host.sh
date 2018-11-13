@@ -25,10 +25,10 @@ ip_list=`nmap -n -sn $ip_range |             \
 echo $ip_list
 
 for ip in  $ip_list; do
-    if ! `nslookup -timeout=0.1 $ip | grep '\.lan\.' > /dev/null`; then
+    if ! `nslookup -timeout=0.1 $ip | grep '\.local\.' > /dev/null`; then
         name="Unknown_Host"
     else
-        name=`nslookup -timeout=1 $ip | grep '\.lan\.' | cut -d= -f 2 | cut -d. -f 1`
+        name=`nslookup -timeout=1 $ip | grep '\.local\.' | cut -d= -f 2 | cut -d. -f 1`
     fi
     echo -e "$ip \t$name" 
 done
