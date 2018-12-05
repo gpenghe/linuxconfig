@@ -16,7 +16,7 @@ case $verb in
         cmd="sudo pacman -S $@"
         ;;
     search)
-        cmd="sudo pacman -Qs"
+        cmd="sudo pacman -Qs $@"
         ;;
     update)
         cmd="sudo pacman -Syy"
