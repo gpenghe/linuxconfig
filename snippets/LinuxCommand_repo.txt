@@ -1,0 +1,3 @@
+## Init a master branch
+
+    $ repo start master

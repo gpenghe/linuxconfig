@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote fetch="ssh://git@bitbucket.org/foobar" name="bitbucket"/>
+
+  <default
+      sync-j="8"
+      revision="master"
+      remote="bitbucket"
+      />
+
+  <project name="foo_bar_app"       path="bar_app"/>
+
+  <project name="ti_tools/bios">
+      <linkfile src="/opt/footool" dest="foo/bar"/>
+  </project>
+  <project name="foo_bar2"                 path="foo_bar2"/>
+
+</manifest>
