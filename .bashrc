@@ -147,8 +147,6 @@ if [ -e $HOME/.bashrc.local ]; then
     . $HOME/.bashrc.local
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 . $HOME/.bash_completion
 
 # disable the following since it's too slow (~500ms)
