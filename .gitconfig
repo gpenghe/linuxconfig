@@ -30,4 +30,4 @@
 	process = git-lfs filter-process
 	required = true
 [mailmap]
-	file = /home/peng/.mailmap
+	file = $HOME/.mailmap
