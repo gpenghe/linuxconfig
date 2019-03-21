@@ -93,6 +93,7 @@ alias gv='git log --oneline --graph --decorate --all'
 alias gs='git status -s'
 alias gc='git cia -m "mod"'
 alias gd=' git difftool --tool=vimdiff --no-prompt'
+alias gdc=' git difftool --tool=vimdiff --no-prompt --cached'
 
 # "apt" for arch linux
 if pacman -h &>/dev/null; then
@@ -104,3 +105,5 @@ alias ccat='vimcat'
 alias colorcat='vimcat'
 alias color_cat='vimcat'
 alias cocat='vimcat'
+
+alias v='vi $(fzf --height 25%)'

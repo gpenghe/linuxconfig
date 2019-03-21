@@ -176,7 +176,7 @@ export PROMPT_COMMAND="${s} history -a; history -c; history -r;"
 
 # fuzzy finder for Ctrl-R
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='git ls-tree -r --name-only HEAD || $FZF_INITIAL_COMMAND'
 
 # fuzzy cd for j
 # on Ubuntu:
