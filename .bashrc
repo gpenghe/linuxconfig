@@ -185,6 +185,13 @@ export FZF_DEFAULT_COMMAND='git ls-tree -r --name-only HEAD || $FZF_INITIAL_COMM
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 [[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 
+if which cpupower > /dev/null; then
+    if ! $(cpupower frequency-info|grep 'The governor'|grep performance >/dev/null); then
+        echo Setting CPU governor to performance
+        sudo cpupower frequency-set --governor performance
+    fi
+fi
+
 
 # last line
 true  # always returns 0
