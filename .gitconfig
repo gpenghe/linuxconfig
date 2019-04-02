@@ -31,4 +31,4 @@
 	process = git-lfs filter-process
 	required = true
 [mailmap]
-	file = $HOME/.mailmap
+	file = ~/.mailmap
