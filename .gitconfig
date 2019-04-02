@@ -14,6 +14,7 @@
     ci = commit
     cia = commit -a
     serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+    stashu = !git commit -q -m 'tmp' && git stash -q && git reset -q --soft HEAD~1
 [push]
 	default = matching
 [receive]
