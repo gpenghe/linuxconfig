@@ -92,8 +92,9 @@ alias gv='git log --oneline --graph --decorate --all'
 #alias gs='git status -s; echo ========= ; stg series'
 alias gs='git status -s'
 alias gc='git cia -m "mod"'
-alias gd=' git difftool --tool=vimdiff --no-prompt'
-alias gdc=' git difftool --tool=vimdiff --no-prompt --cached'
+alias gd='git difftool --tool=vimdiff --no-prompt'
+alias gdc='git difftool --tool=vimdiff --no-prompt --cached'
+alias gdh='git difftool --tool=vimdiff --no-prompt HEAD~1 HEAD'
 
 # "apt" for arch linux
 if pacman -h &>/dev/null; then
