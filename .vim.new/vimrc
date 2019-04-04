@@ -29,6 +29,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-abolish'
 " Plug 'embear/vim-localvimrc'    # causing problems for Yocto build?
 Plug 'scrooloose/nerdcommenter'
+Plug 'vim-scripts/a.vim'
+" {{{
+  nnoremap <silent> <leader>s :A<CR>       
+  nnoremap <silent> <leader>sv :AV<CR>      " splits and switches
+  nnoremap <silent> <leader>sc :IH<CR>      " switches to file under cursor
+  nnoremap <silent> <leader>scv :IHS<CR>    " splits and switches to file under cursor
+" }}}
 
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
