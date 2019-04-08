@@ -27,8 +27,16 @@ Plug 'easymotion/vim-easymotion'    "Usage: \\sf
 Plug 'vim-scripts/TaskList.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-abolish'
-" Plug 'embear/vim-localvimrc'    # causing problems for Yocto build?
+" Plug 'embear/vim-localvimrc'    " causing problems for Yocto build?
 Plug 'scrooloose/nerdcommenter'
+
+Plug 'szw/vim-maximizer'
+" {{{
+  " let g:maximizer_set_default_mapping = 1     " not working somehow. so the following
+  nnoremap <silent> <leader>m :MaximizerToggle<CR>
+  vnoremap <silent> <leader>M :MaximizerToggle<CR>gv
+" }}}
+
 Plug 'vim-scripts/a.vim'
 " {{{
   nnoremap <silent> <leader>s :A<CR>       
