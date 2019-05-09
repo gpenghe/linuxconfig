@@ -249,3 +249,4 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-   " Open cscope results in cwindow
+set foldmarker=//#,//_
