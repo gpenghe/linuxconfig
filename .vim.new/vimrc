@@ -8,6 +8,7 @@ if filereadable("~/.vimrc.local.plugged")
     source ~/.vimrc.local.plugged
 endif
 
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-sensible'   " Set good vimrc defaults
 Plug 'nicoraffo/conque'     " Usage: <C-h>
