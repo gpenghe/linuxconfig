@@ -30,29 +30,7 @@ endif
 "    endif
 "endif
 
-let tmpf = "../cscope.out"
+let tmpf = "./cscope.out"
 if filereadable(expand(tmpf))
   exec "cs add ". tmpf
 endif
-
-let tmpf = "../../cscope.out"
-if filereadable(expand(tmpf))
-  exec "cs add ". tmpf
-endif
-
-let tmpf = "../../../cscope.out"
-if filereadable(expand(tmpf))
-  exec "cs add ". tmpf
-endif
-
-let tmpf = "../../../../cscope.out"
-if filereadable(expand(tmpf))
-  exec "cs add ". tmpf
-endif
-
-let tmpf = "../../../../../cscope.out"
-if filereadable(expand(tmpf))
-  exec "cs add ". tmpf
-endif
-
-
