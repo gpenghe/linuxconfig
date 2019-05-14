@@ -252,3 +252,5 @@ match ExtraWhitespace /\s\+$/
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-   " Open cscope results in cwindow
 set foldmarker=//#,//_
+
+set cino=l1    " better switch-case {} formatting
