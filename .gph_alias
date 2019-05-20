@@ -96,6 +96,7 @@ alias gc='git cia -m "mod"'
 alias gd='git difftool --tool=vimdiff --no-prompt'
 alias gdc='git difftool --tool=vimdiff --no-prompt --cached'
 alias gdh='git difftool --tool=vimdiff --no-prompt HEAD~1 HEAD'
+alias gau='git add -u && gs'
 
 # "apt" for arch linux
 if pacman -h &>/dev/null; then
