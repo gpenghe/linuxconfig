@@ -256,5 +256,5 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-   " Open cscope results in cwindow
 set foldmarker=//#,//_
 
 set cino=l1    " better switch-case {} formatting
-set grepprg=rg\ --ignore\ --no-heading
+set grepprg=rg\ --ignore\ --no-heading\ --line-number
 let g:EasyGrepCommand=1
