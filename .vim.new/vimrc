@@ -132,6 +132,8 @@ let NERDTreeQuitOnOpen = 0
 "Plug 'Shougo/neocomplete.vim'   "XXX: require lua
 "Plug 'Valloric/YouCompleteMe'
 
+Plug 'dkprice/vim-easygrep'
+
 call plug#end()
 
 " ===================================================
@@ -254,3 +256,5 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-   " Open cscope results in cwindow
 set foldmarker=//#,//_
 
 set cino=l1    " better switch-case {} formatting
+set grepprg=rg\ --ignore\ --no-heading
+let g:EasyGrepCommand=1
