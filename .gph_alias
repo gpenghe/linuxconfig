@@ -93,10 +93,15 @@ alias gv='git log --oneline --graph --decorate --all'
 alias gs='git status -s'
 alias gt='git ls-tree -r --name-only HEAD | while read filename; do echo "$(git log -1 --format="%ai" -- $filename) $filename"; done | sort'
 alias gc='git cia -m "mod"'
-alias gd='git difftool --tool=vimdiff --no-prompt'
-alias gdc='git difftool --tool=vimdiff --no-prompt --cached'
-alias gdh='git difftool --tool=vimdiff --no-prompt HEAD~1 HEAD'
 alias gau='git add -u && gs'
+
+alias gd="git diff --ignore-all-space --color-words='[[:alnum:]_]+|[^[:space:]]'"
+alias gdc="gd --cached"
+alias gdh="gd HEAD~1 HEAD"
+
+alias gdt='git difftool --tool=vimdiff --no-prompt'
+alias gdtc='git difftool --tool=vimdiff --no-prompt --cached'
+alias gdth='git difftool --tool=vimdiff --no-prompt HEAD~1 HEAD'
 
 # "apt" for arch linux
 if pacman -h &>/dev/null; then
