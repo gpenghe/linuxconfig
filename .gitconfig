@@ -14,8 +14,7 @@
     ci = commit
     cia = commit -a
     serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
-    stashu = !git stash save --keep-index
-    stashs = !git commit -q -m 'tmp' && git stash save -q "unstaged" && git reset -q --soft HEAD~1 && git stash save -q "staged" && git stash apply stash@{1}
+    stashu = stash save --keep-index
 [push]
 	default = matching
 [receive]
