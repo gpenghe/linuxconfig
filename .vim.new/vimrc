@@ -258,3 +258,54 @@ set foldmarker=//#,//_
 set cino=l1    " better switch-case {} formatting
 set grepprg=rg\ --ignore\ --no-heading\ --line-number
 let g:EasyGrepCommand=1
+
+" Key mappings
+"------------------------------------------------------------------------------
+
+" Map Functions Keys
+"map <F5>    :bn<CR>    " Some macros to manage the buffer of vim
+"map <F6>    :bp<CR>
+"map <F7>    :cp<CR>
+"map <F8>    :cn<CR>
+
+map <F7>    :set fdm=syntax<CR>
+map <F8>    zM
+map <F9>    zR
+
+"map <F11>    :set invpaste<CR>
+
+"map <F9>    @a
+"map <F12>    :NERDTreeToggle<CR>
+
+" Version Control System mappings
+map ,sD :vsp new<Enter>:read !svn diff<Enter>:set syntax=diff buftype=nofile<Enter>gg
+map ,hD :vsp new<Enter>:read !hg diff<Enter>:set syntax=diff buftype=nofile<Enter>gg
+map ,gD :vsp new<Enter>:read !git diff<Enter>:set syntax=diff buftype=nofile<Enter>gg
+
+map ,sd :!svn cat -r BASE % > /tmp/tmpfile.c<Enter><Enter>:diffsplit /tmp/tmpfile.c<Enter><Enter>gg
+map ,hd :!hg cat % > /tmp/tmpfile.c<Enter><Enter>:diffsplit /tmp/tmpfile.c<Enter><Enter>gg
+map ,gd :!git show HEAD:% > /tmp/tmpfile.c<Enter><Enter>:diffsplit /tmp/tmpfile.c<Enter><Enter>gg
+
+map ,ss :!svn stat\|grep -v "\.out$"\|grep -v "\.orig$"\|grep -v "\.swp$"<Enter>
+map ,hs :!hg stat\|grep -v "\.out$"\|grep -v "\.orig$"\|grep -v "\.swp$"<Enter>
+map ,gs :!git status -s<Enter>
+
+map ,sl :!svn log\|head -n14<Enter>
+map ,hl :!hg log\|head -n14<Enter>
+map ,gl :!git tree2\|head -n14<Enter>
+
+map ,hv :!hg view<Enter>
+map ,gv :!gitk<Enter>
+
+" Misc
+"-------------------------------------
+map ,e :vsp<Enter>:Explore<Enter>
+inoremap {<cr> {<cr>}<c-o>O
+inoremap [<cr> [<cr>]<c-o>O
+inoremap (<cr> (<cr>)<c-o>O
+
+map ,, :A<Enter>
+map ZZ :wq<CR>
+"map ,q :q<Enter>
+"nnoremap ; :
+"
