@@ -1,1 +1,5 @@
 curl http://192.168.4.10:8080/user/gph/my-views/view/all/job/Baseboard/build?token=BB_Token --user "gph:xxxxxxxxxxxxx"
+
+
+# Or in "Manage Jenkins" ==> "Configure Global Security", enable anonymous read access
+
