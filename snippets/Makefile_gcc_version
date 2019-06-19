@@ -1,0 +1,9 @@
+GCC_VER := $(shell $(CC) -dumpversion | sed -e 's/\.\([0-9][0-9]\)/\1/g' -e 's/\.\([0-9]\)/0\1/g' -e 's/^[0-9]\{3,4\}$$/&00/')
+REF_VER := 45000
+GCC_GTEQ_REF := $(shell expr $(GCC_VER) \>= $(REF_VER))
+
+all:
+	@echo $(GCC_VER)
+ifeq "$(GCC_GTEQ_REF)" "1"
+	@echo gcc version is larger than $(REF_VER)
+endif
