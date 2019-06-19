@@ -8,6 +8,11 @@ if filereadable("~/.vimrc.local.plugged")
     source ~/.vimrc.local.plugged
 endif
 
+Plug 'prettier/vim-prettier' " Usage: \p or :Prettier
+" {{{
+    let g:prettier#autoformat = 1
+" }}}
+
 Plug 'tpope/vim-unimpaired'  " enable [q, ]q, [e, ]e, etc
 Plug 'tpope/vim-repeat'      " to enable . command for [e and ]e etc
 Plug 'vim-scripts/taglist.vim'
