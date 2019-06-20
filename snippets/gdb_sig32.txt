@@ -1,0 +1,4 @@
+
+handle SIG32 nostop
+
+exec gdb -ex "handle SIG32 nostop" -ex r --args ./usbMain
