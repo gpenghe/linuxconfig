@@ -8,7 +8,11 @@ if filereadable("~/.vimrc.local.plugged")
     source ~/.vimrc.local.plugged
 endif
 
-Plug 'prettier/vim-prettier' " Usage: \p or :Prettier
+Plug 'chrisbra/NrrwRgn'  " narrow selection. Usage: \nr or :NR
+" {{{
+    let g:nrrw_rgn_vert = 1
+" }}}
+Plug 'prettier/vim-prettier' " Usage: \p or :Prettier; FIXME: autoformat on save not working
 " {{{
     let g:prettier#autoformat = 1
 " }}}
