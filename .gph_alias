@@ -118,3 +118,5 @@ alias v='vi $(fzf --height 25%)'
 
 alias mc='make cscope'
 alias m='ALWAYS_COLOR=1 make 2>&1 | less -REX'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
