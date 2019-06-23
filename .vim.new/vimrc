@@ -318,3 +318,4 @@ map ZZ :wq<CR>
 "map ,q :q<Enter>
 "nnoremap ; :
 "
+nnoremap <leader>wn :vnew<CR>
