@@ -8,6 +8,7 @@ if filereadable("~/.vimrc.local.plugged")
     source ~/.vimrc.local.plugged
 endif
 
+Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'chrisbra/NrrwRgn'  " narrow selection. Usage: \nr or :NR
 " {{{
     let g:nrrw_rgn_vert = 1
