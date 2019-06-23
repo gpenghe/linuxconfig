@@ -319,3 +319,9 @@ map ZZ :wq<CR>
 "nnoremap ; :
 "
 nnoremap <leader>wn :vnew<CR>
+
+" TODO: change this to ga (no has conflict)
+nnoremap <leader>gg :!git add %;echo "Status:";git status -s <CR>
+nnoremap <leader>gr :!git reset %;echo "Status:";git status -s <CR>
+nnoremap <leader>gs :!git status -s <CR>
+
