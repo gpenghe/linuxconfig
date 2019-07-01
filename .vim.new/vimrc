@@ -23,6 +23,7 @@ Plug 'tpope/vim-repeat'      " to enable . command for [e and ]e etc
 Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-sensible'   " Set good vimrc defaults
 Plug 'nicoraffo/conque'     " Usage: <C-h>
+let g:ConqueTerm_ExecFileKey = ''       " default: '<F11>'
 Plug 'JLimperg/Align'       " Usage: \t=
 Plug 'nvie/vim-togglemouse' " Usage: F12
 " Plug 'mihais/vim-mark'      " For multiple highlights. Usage: \m
@@ -281,6 +282,8 @@ map <F6>    :set fdm=marker<CR>
 map <F7>    :set fdm=syntax<CR>
 map <F8>    zM
 map <F9>    zR
+
+map <F11>    :qa<CR>
 
 "map <F6>    @a
 "map <F11>    :set invpaste<CR>
