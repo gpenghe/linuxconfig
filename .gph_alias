@@ -103,6 +103,8 @@ alias gdt='git difftool --tool=vimdiff --no-prompt'
 alias gdtc='git difftool --tool=vimdiff --no-prompt --cached'
 alias gdth='git difftool --tool=vimdiff --no-prompt HEAD~1 HEAD'
 
+alias gco='git checkout'
+
 # "apt" for arch linux
 if pacman -h &>/dev/null; then
     alias apt='archapt'
