@@ -282,9 +282,9 @@ map <F7>    :set fdm=syntax<CR>
 map <F8>    zM
 map <F9>    zR
 
+map <F10>    @a
 map <F11>    :qa<CR>
 
-"map <F6>    @a
 "map <F11>    :set invpaste<CR>
 "map <F12>    :NERDTreeToggle<CR>
 
