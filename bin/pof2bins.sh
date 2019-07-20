@@ -1,9 +1,5 @@
 #!/bin/bash
 
-pof=$1
-pof_header_size=146
-out_dir=fwbins
-
 names=(
     'Image_Data_0'
     'Table_0'
@@ -55,6 +51,43 @@ lengths=(
 mod_cnt=${#names[@]}
 mod_cnt_starts=${#starts[@]}
 mod_cnt_lengths=${#lengths[@]}
+
+usage() {
+cat << eot
+Usage: $0 <a.pof>
+
+Will output the following binary files that are extracted from respective
+addresses with respective lengths. All binaries will be endian-reversed.
+For example: a 4-byte data "AA BB CC DD" will becomes "DD CC BB AA".
+
+Extraction Table:
+----------------------------------------------------------
+  Bin_Name            Pof_Offset            Length
+----------------------------------------------------------
+eot
+
+while [[ $i -lt $mod_cnt ]]; do
+    name=${names[i]}
+    _start=${starts[i]}
+    len=${lengths[i]}
+    printf "%16s     0x%08X  %12d (%08X)\n" $name.bin $_start $len $len
+    let i=$i+1
+done
+
+cat << eot
+----------------------------------------------------------
+eot
+}
+
+if [[ $# -ne 1 ]]; then
+    usage
+    exit 1
+fi
+
+pof=$1
+pof_header_size=146
+out_dir=fwbins
+
 if [[ $mod_cnt_starts -ne $mod_cnt ]]; then
     echo "'starts' array length expected: $mod_cnt. Actual $mod_cnt_starts"
     exit 1
