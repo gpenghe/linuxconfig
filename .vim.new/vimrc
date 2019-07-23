@@ -333,8 +333,8 @@ inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
 
 map ,, :A<Enter>
-map zz :q<CR>
-map ZZ :q!<CR>
+map zz :qa<CR>
+map ZZ :qa!<CR>
 "map ,q :q<Enter>
 "nnoremap ; :
 "
