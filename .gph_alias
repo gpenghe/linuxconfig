@@ -88,11 +88,12 @@ alias gx35='git tree2 -35'
 alias gx40='git tree2 -40'
 alias gx45='git tree2 -45'
 alias gx50='git tree2 -50'
-alias gv='git log --oneline --graph --decorate --all'
-#alias gs='git status -s; echo ========= ; stg series'
+
 alias gs='git status -s'
+alias gc='git checkout master'
 alias gt='git ls-tree -r --name-only HEAD | while read filename; do echo "$(git log -1 --format="%ai" -- $filename) $filename"; done | sort'
-alias gc='git cia -m "mod"'
+
+alias gcb='git checkout'
 alias gau='git add -u && gs'
 
 alias gd="git diff --ignore-all-space --color-words='[[:alnum:]_]+|[^[:space:]]'"
@@ -103,7 +104,6 @@ alias gdt='git difftool --tool=vimdiff --no-prompt'
 alias gdtc='git difftool --tool=vimdiff --no-prompt --cached'
 alias gdth='git difftool --tool=vimdiff --no-prompt HEAD~1 HEAD'
 
-alias gco='git checkout'
 alias gps='git push'
 alias gpl='git pull'
 
