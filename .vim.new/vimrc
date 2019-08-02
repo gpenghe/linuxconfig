@@ -271,7 +271,7 @@ endif
 
 let &colorcolumn="78"
 " highlight ColorColumn ctermbg=Black
-highlight ColorColumn ctermbg=gray
+highlight ColorColumn ctermbg=cyan
 
 set list       " show tabs
 set listchars=tab:▸\ ,
