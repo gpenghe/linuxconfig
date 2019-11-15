@@ -1,0 +1,17 @@
+{
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "workbench.editor.closeEmptyGroups": false,
+      "editor.hover.delay": 600,
+    "telemetry.enableCrashReporter": false,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "editor.minimap.enabled": true,
+    "cmake.configureOnOpen": true,
+    "[plaintext]": {},
+    "workbench.colorTheme": "Default Light+",
+    "files.eol": "\n",
+    "workbench.activityBar.visible": true,
+    "markdown.marp.exportType": "pptx"
+}
