@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+# Login:
+# kwauth --url http://xxx.com:8090
+
 # Trace a build of the BB project
 #
 make clean
