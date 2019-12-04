@@ -130,3 +130,5 @@ alias pbpaste='xclip -selection clipboard -o'
 m() {
     ALWAYS_COLOR=1 make "$@" 2>&1 | less -REX
 }
+
+alias weechat='TERM=screen weechat'
