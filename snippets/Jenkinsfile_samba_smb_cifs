@@ -1,0 +1,29 @@
+stage('Copy quick build zip files to J Drive') {
+    steps {
+        dir('/J_tmp') {
+            cifsPublisher(
+                publishers: [[
+                    configName: 'J_Software',
+                    transfers: [[
+                        cleanRemote: false,
+                        excludes: '',
+                        flatten: false,
+                        makeEmptyDirs: true,
+                        noDefaultExcludes: false,
+                        patternSeparator: '/',
+                        remoteDirectory: "/",
+                        remoteDirectorySDF: false,
+                        removePrefix: '',
+                        sourceFiles: '*.zip'
+                    ]],
+                    usePromotionTimestamp: false,
+                    useWorkspaceInPromotion: false,
+                    verbose: true
+                ]]
+            )
+        }
+        sh """
+            rm -v -rf /J_tmp/*
+        """
+    }
+}
