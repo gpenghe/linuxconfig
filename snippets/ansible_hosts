@@ -1,5 +1,6 @@
 [ubuntu]
-devpc ansible_host=192.168.8.10 ansible_port=8022 ansible_user=peng
+devpc       ansible_host=192.168.8.10   ansible_user=peng ansible_port=8022
+p52         ansible_host=192.168.8.171  ansible_user=gph
 
 [device]
-congatec ansible_host=192.168.8.194
+congatec    ansible_host=192.168.8.194  ansible_user=gph
