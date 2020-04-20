@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 import socket
 
@@ -34,4 +34,4 @@ def get_self_ip_old():
         del s
     return client
 
-print get_self_ip()
+print(get_self_ip())
