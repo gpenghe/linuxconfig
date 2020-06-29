@@ -26,12 +26,14 @@ _pip_completion()
 function prompt_command {
     local ret="$?"
     errmsg=''
+    is_unix=1
     [[ $ret -ne 0 ]] && errmsg="->($(printf '%x' $ret))"
     if [[ $(uname) == 'Darwin' ]]; then
         ut=$(uptime | awk '{print $10}')
     elif [[ $(uname) == 'Linux' ]]; then
         ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
-    else
+    else  // cygwin, mingw64, etc
+        is_unix=0
         ut=""
     fi
     tm=$(date +"%m-%d %H:%M:%S")
@@ -41,17 +43,17 @@ function prompt_command {
     cpumsg="$(cat /proc/cpuinfo |grep MHz|cut -d: -f 2|head -1|cut -d. -f1) MHz"
 }
 
-if [[ "$SHELL" =~ "bash" ]]; then
-    complete -o default -F _pip_completion pip
-    # shell options
-    shopt -s nocaseglob
-    export GIT_PS1_SHOWDIRTYSTATE=1
-    export GIT_PS1_SHOWUNTRACKEDFILES=1
-    export GIT_PS1_SHOWSTASHSTATE=1
-    export GIT_PS1_SHOWUPSTREAM=auto
-    PROMPT_COMMAND=prompt_command
-    PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut -$cpumsg \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
-    if [[ -f ~/.git-completion.bash ]]; then source ~/.git-completion.bash; fi
+    if [[ "$SHELL" =~ "bash" ]] && [[ "$is_unix" -eq 1 ]]; then
+        complete -o default -F _pip_completion pip
+        # shell options
+        shopt -s nocaseglob
+        export GIT_PS1_SHOWDIRTYSTATE=1
+        export GIT_PS1_SHOWUNTRACKEDFILES=1
+        export GIT_PS1_SHOWSTASHSTATE=1
+        export GIT_PS1_SHOWUPSTREAM=auto
+        PROMPT_COMMAND=prompt_command
+        PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut -$cpumsg \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
+        if [[ -f ~/.git-completion.bash ]]; then source ~/.git-completion.bash; fi
 fi
 
 
@@ -182,7 +184,7 @@ export FZF_DEFAULT_COMMAND='rg --files || $FZF_INITIAL_COMMAND'
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 [[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 
-if which cpupower > /dev/null; then
+if which cpupower &> /dev/null; then
     if ! $(cpupower frequency-info|grep 'The governor'|grep performance >/dev/null); then
         echo Setting CPU governor to performance
         sudo cpupower frequency-set --governor performance
