@@ -29,8 +29,10 @@ function prompt_command {
     [[ $ret -ne 0 ]] && errmsg="->($(printf '%x' $ret))"
     if [[ $(uname) == 'Darwin' ]]; then
         ut=$(uptime | awk '{print $10}')
-    else
+    elif [[ $(uname) == 'Linux' ]]; then
         ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
+    else
+        ut=""
     fi
     tm=$(date +"%m-%d %H:%M:%S")
     jobmsg=''
