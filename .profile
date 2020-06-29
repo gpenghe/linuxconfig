@@ -15,6 +15,7 @@ export SET_IN_HOME_PROFILE=yes
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
+    echo "Loading ~/.bashrc"
 	. "$HOME/.bashrc"
     fi
 fi
@@ -25,7 +26,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-echo "Setting up node.js"
+# echo "Setting up node.js"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
