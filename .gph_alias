@@ -132,3 +132,7 @@ m() {
 }
 
 alias weechat='TERM=screen weechat'
+
+# show links in concised way
+alias lls="\ls --color -G -l | sed '1d' | awk  '{print \$8, \$9, \$10}'"
+
