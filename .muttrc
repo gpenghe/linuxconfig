@@ -46,7 +46,7 @@ set header_cache="$HOME/.mutt.header_cache"
 set message_cachedir="$HOME/.mutt.body_cache"
 
 # show time in local time zone
-set pager_format="%4C %Z %[!%b %e at %I:%M %p] %.30n %s%* -- (%P)"
+# set pager_format="%4C %Z %[!%b %e at %I:%M %p] %.30n %s%* -- (%P)"
 set pager_index_lines = 10
 set pager_context = 3
 set pager_stop

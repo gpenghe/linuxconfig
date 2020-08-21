@@ -1,6 +1,13 @@
 # vim: filetype=muttrc
 
 # General rebindings
+bind index \Cf next-page
+bind index \Cb previous-page
+
+bind pager g noop
+bind pager gg top
+bind pager G bottom
+
 bind attach <return> view-mailcap
 bind attach l view-mailcap
 bind editor <space> noop
@@ -9,8 +16,8 @@ bind index G last-entry
 bind index g noop
 bind index gg first-entry
 bind pager,attach h exit
-bind pager j next-line
-bind pager k previous-line
+bind pager \Cy next-line
+bind pager \Ce previous-line
 bind pager l view-attachments
 bind index D delete-message
 bind index U undelete-message
@@ -19,8 +26,8 @@ bind index h noop
 bind index l display-message
 bind browser h goto-parent
 bind browser l select-entry
-bind pager,browser gg top-page
-bind pager,browser G bottom-page
+bind browser gg top-page
+bind browser G bottom-page
 bind index,pager,browser d half-down
 bind index,pager,browser u half-up
 bind index,pager R group-reply
