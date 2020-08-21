@@ -1,8 +1,8 @@
 # vim: filetype=muttrc
 
 # General rebindings
-bind index g noop
 bind index gg noop
+bind index g noop
 bind index \Cf next-page
 bind index \Cb previous-page
 bind index G last-entry
@@ -17,8 +17,8 @@ bind index \031 previous-undeleted	# Mouse wheel
 bind index \005 next-undeleted		# Mouse wheel
 bind index R group-reply
 
+bind pager gg noop
 bind pager g noop
-bind pager gg top
 bind pager G bottom
 bind pager c imap-fetch-mail
 bind pager \Cy next-line
@@ -63,9 +63,25 @@ bind editor <Tab> complete-query
 bind editor ^T complete
 
 # Press A to add contact to Khard address book
-macro index,pager A \
-    "<pipe-message>khard add-email<return>" \
-    "add the sender email address to khard"
+# macro index,pager A \
+#     "<pipe-message>khard add-email<return>" \
+#     "add the sender email address to khard"
+bind index My noop
+bind index Mn noop
+bind index M noop
+bind index S noop
+macro index A \
+    "Lall<return>" \
+    "disable limiting"
+macro index My \
+    "Lbuildroot<return>" \
+    "only show mails from a mailing list"
+macro index Mn \
+    "L!(~s buildroot)<return>" \
+    "only show mails not from a mailing list"
+macro index S \
+    ":source ~/.muttrc<enter>" \
+    "source .muttrc"
 
 ## Shortcuts
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/gmail<enter><change-folder>!<enter>'
