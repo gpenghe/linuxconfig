@@ -35,3 +35,7 @@ set sort_aux=reverse-last-date-received
 
 # check emails automatically every 30 seconds
 set timeout=30
+
+# show more detailed time
+set index_format="%Z %{%Y %b %e  %H:%M} %?X?(%X)&   ? %-22.22F  %.100s %> %5c "
+
