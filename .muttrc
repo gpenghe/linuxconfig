@@ -1,6 +1,7 @@
 # .muttrc
 
 source $HOME/.mutt.credentials
+source $HOME/.mutt.colors
 
 # ================  IMAP ====================
 set imap_user = $my_gmail
