@@ -70,18 +70,27 @@ bind index My noop
 bind index Mn noop
 bind index M noop
 bind index S noop
-macro index A \
-    "Lall<return>" \
-    "disable limiting"
-macro index My \
-    "Lbuildroot<return>" \
-    "only show mails from a mailing list"
-macro index Mn \
-    "L!(~s buildroot)<return>" \
-    "only show mails not from a mailing list"
 macro index S \
     ":source ~/.muttrc<enter>" \
     "source .muttrc"
+macro index A \
+    "L all<return>" \
+    "disable limiting"
+macro index My \
+    "L buildroot<return>" \
+    "only show mails from a mailing list"
+macro index Mn \
+    "L !(~s buildroot)<return>" \
+    "only show mails not from a mailing list"
+macro index Id \
+    "L^e (~d <1d)<return>" \
+    "Show messages in last day"
+macro index Iw \
+    "L^e (~d <1w)<return>" \
+    "Show messages in last week"
+macro index Im \
+    "L^e (~d <1m)<return>" \
+    "Show messages in last month"
 
 ## Shortcuts
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/gmail<enter><change-folder>!<enter>'
