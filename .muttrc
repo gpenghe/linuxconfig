@@ -28,6 +28,8 @@ set realname = $my_gmail_fullname
 set from = $my_gmail
 set use_from = yes
 
+# ================  mailing lists ================
+subscribe bugzilla@busybox.net buildroot@buildroot.org buildroot@busybox.net buildroot@uclibc.org
 # ================  General Settings ================
 
 # sort emails in reverse order (like in Outlook)
@@ -39,7 +41,7 @@ set sort_aux=reverse-last-date-received
 set timeout=30
 
 # show more detailed time
-set index_format="%Z %{%Y %b %e  %H:%M %Z} %?X?(%X)&   ? %-22.22F  %.100s %> %5c "
+set index_format="%Z %{%Y %b %e  %H:%M %Z} %?K?%10.9K&          ?  %?X?(%X)&   ? %-22.22F  %.100s %> %5c "
 
 # cache headers & bodies so it loads faster
 set header_cache="$HOME/.mutt.header_cache"
