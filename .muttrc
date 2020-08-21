@@ -50,3 +50,10 @@ set message_cachedir="$HOME/.mutt.body_cache"
 set pager_index_lines = 10
 set pager_context = 3
 set pager_stop
+
+# sidebar patch config
+set sidebar_visible
+# set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
+set mail_check_stats
+mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Trash
