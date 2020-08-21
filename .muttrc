@@ -25,3 +25,13 @@ unset use_domain        # because joe@localhost is just embarrassing
 set realname = $my_gmail_fullname
 set from = $my_gmail
 set use_from = yes
+
+# ================  General Settings ================
+
+# sort emails in reverse order (like in Outlook)
+set sort=threads
+set sort_browser=date
+set sort_aux=reverse-last-date-received
+
+# check emails automatically every 30 seconds
+set timeout=30
