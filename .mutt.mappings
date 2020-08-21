@@ -19,8 +19,9 @@ bind pager,attach h exit
 bind pager \Cy next-line
 bind pager \Ce previous-line
 bind pager l view-attachments
-bind index D delete-message
-bind index U undelete-message
+bind index d delete-message
+bind index u noop
+bind index u undelete-message
 bind index L limit
 bind index h noop
 bind index l display-message
@@ -28,8 +29,8 @@ bind browser h goto-parent
 bind browser l select-entry
 bind browser gg top-page
 bind browser G bottom-page
-bind index,pager,browser d half-down
-bind index,pager,browser u half-up
+# bind index,pager,browser d half-down
+# bind index,pager,browser u half-up
 bind index,pager R group-reply
 bind index \031 previous-undeleted	# Mouse wheel
 bind index \005 next-undeleted		# Mouse wheel

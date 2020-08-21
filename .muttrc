@@ -52,7 +52,7 @@ set pager_context = 3
 set pager_stop
 
 # sidebar patch config
-set sidebar_visible
+# set sidebar_visible
 # set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
 set sidebar_format = "%B %* [%?N?%N / ?%S]"
 set mail_check_stats
