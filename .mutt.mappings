@@ -74,14 +74,17 @@ macro index S \
     ":source ~/.muttrc<enter>" \
     "source .muttrc"
 macro index A \
-    "L all<return>" \
+    "Lall<return>" \
     "disable limiting"
-macro index My \
+macro index Mp \
+    "L !(~s buildroot) !(~f Amazon) !(~f UPS) !(~f Bank\\ of\\ America) !(~f Chase) !(~f Verizon)<return>" \
+    "Show Primary"
+macro index Mm \
     "L buildroot<return>" \
-    "only show mails from a mailing list"
-macro index Mn \
-    "L !(~s buildroot)<return>" \
-    "only show mails not from a mailing list"
+    "Show Mailinglists"
+macro index Mu \
+    "L (~f Amazon) | (~f UPS) | (~f Chase) | (~f Bank\\ of\\ America) | (~f Verizon)<return>" \
+    "Show Updates"
 macro index Id \
     "L^e (~d <1d)<return>" \
     "Show messages in last day"
