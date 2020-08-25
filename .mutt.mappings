@@ -79,8 +79,11 @@ macro index A \
 macro index Mp \
     "L !(~s buildroot) !(~f Amazon) !(~f UPS) !(~f Bank\\ of\\ America) !(~f Chase) !(~f Verizon)<return>" \
     "Show Primary"
-macro index Mm \
+macro index Mb \
     "L buildroot<return>" \
+    "Show Mailinglists"
+macro index Mg \
+    "L ~C git@vger.kernel.org<return>" \
     "Show Mailinglists"
 macro index Mu \
     "L (~f Amazon) | (~f UPS) | (~f Chase) | (~f Bank\\ of\\ America) | (~f Verizon)<return>" \
