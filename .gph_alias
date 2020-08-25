@@ -49,7 +49,7 @@ alias vd='vi -c "set syn=diff"'
 alias rm="saferm.sh"
 alias cal="cal -m"
 alias ccs="cc_app"
-alias cgrep="grep -s -n --color"
+alias grep="grep -s -n --color"
 
 alias diff='colordiff -u'
 alias more='less -R'
