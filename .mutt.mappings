@@ -73,17 +73,17 @@ bind index S noop
 macro index S \
     ":source ~/.muttrc<enter>" \
     "source .muttrc"
-macro index A \
-    "Lall<return>" \
-    "disable limiting"
 macro index Mp \
-    "L !(~s buildroot) !(~f Amazon) !(~f UPS) !(~f Bank\\ of\\ America) !(~f Chase) !(~f Verizon)<return>" \
+    "L !(~C git@vger.kernel.org) !(~C linux-kernel@vger.kernel.org) !(~s buildroot) !(~f Amazon) !(~f UPS) !(~f Bank\\ of\\ America) !(~f Chase) !(~f Verizon)<return>" \
     "Show Primary"
 macro index Mb \
     "L buildroot<return>" \
     "Show Mailinglists"
 macro index Mg \
     "L ~C git@vger.kernel.org<return>" \
+    "Show Mailinglists"
+macro index Mk \
+    "L ~C linux-kernel@vger.kernel.org<return>" \
     "Show Mailinglists"
 macro index Mu \
     "L (~f Amazon) | (~f UPS) | (~f Chase) | (~f Bank\\ of\\ America) | (~f Verizon)<return>" \
