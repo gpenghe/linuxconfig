@@ -15,7 +15,7 @@
     b       = branch
     ci      = commit
     serve   = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
-    stashu  = stash save --keep-index
+    stashu  = stash push --keep-index
 [push]
 	default = matching
 [receive]
