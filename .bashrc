@@ -217,5 +217,8 @@ if [ -e $HOME/.bashrc.local ]; then
     . $HOME/.bashrc.local
 fi
 
+# make mutt ESC abort_key more responsive
+export ESCDELAY=0
+
 # last line
 true  # always returns 0

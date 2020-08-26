@@ -62,3 +62,9 @@ set pager_stop
 set sidebar_format = "%B %* [%?N?%N / ?%S]"
 set mail_check_stats
 mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Trash
+
+#Ask before quitting, but default to no
+set quit=ask-no
+
+set abort_key = "<Esc>"
+# should set ESCDELAY to 0 in like .bashrc
