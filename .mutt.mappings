@@ -74,10 +74,10 @@ macro index S \
     ":source ~/.muttrc<enter>" \
     "source .muttrc"
 macro index Mp \
-    "L !(~C git@vger.kernel.org) !(~C linux-kernel@vger.kernel.org) !(~s buildroot) !(~f Amazon) !(~f UPS) !(~f Bank\\ of\\ America) !(~f Chase) !(~f Verizon)<return>" \
+    "L !(~C git@vger.kernel.org) !(~C linux-kernel@vger.kernel.org) !(~C buildroot@buildroot.org) !(~C buildroot@busybox.net) !(~C buildroot@uclibc.org) !(~f Amazon) !(~f UPS) !(~f Bank\\ of\\ America) !(~f Chase) !(~f Verizon)<return>" \
     "Show Primary"
 macro index Mb \
-    "L buildroot<return>" \
+    "L (~C buildroot@buildroot.org) | (~C buildroot@uclibc.org) | (~C buildroot@busybox.net)<return>" \
     "Show Mailinglists"
 macro index Mg \
     "L ~C git@vger.kernel.org<return>" \
