@@ -44,7 +44,7 @@ set timeout=30
 
 # show more detailed time
 # NOTE: %12.11 is followed by 12 spaces
-set index_format="%Z %{%Y %b %e  %H:%M %Z} %?K?%13.12K&             ?  %?X?(%X)&   ? %-22.22F  %.100s %> %5c "
+set index_format="%Z %{%b %e %H:%M %Z}%?K?%13.12K&             ? %?X?%X& ? %-17.17F %.100s %> %5c "
 
 # cache headers & bodies so it loads faster
 set header_cache="$HOME/.mutt.header_cache"
