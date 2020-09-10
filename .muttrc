@@ -33,6 +33,7 @@ set use_from = yes
 subscribe bugzilla@busybox.net buildroot@buildroot.org buildroot@busybox.net buildroot@uclibc.org
 subscribe git@vger.kernel.org
 subscribe linux-kernel@vger.kernel.org
+subscribe yocto@lists.yoctoproject.org yocto@yoctoproject.org  meta-freescale@lists.yoctoproject.org
 # ================  General Settings ================
 
 # sort emails in reverse order (like in Outlook)

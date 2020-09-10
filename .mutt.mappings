@@ -66,16 +66,17 @@ bind editor ^T complete
 # macro index,pager A \
 #     "<pipe-message>khard add-email<return>" \
 #     "add the sender email address to khard"
+bind index Mb noop
+bind index Mg noop
+bind index Mk noop
+bind index Mp noop
+bind index Mu noop
 bind index My noop
-bind index Mn noop
 bind index M noop
 bind index S noop
 macro index S \
     ":source ~/.muttrc<enter>" \
     "source .muttrc"
-macro index Mp \
-    "L !(~C git@vger.kernel.org) !(~C linux-kernel@vger.kernel.org) !(~C buildroot@buildroot.org) !(~C buildroot@busybox.net) !(~C buildroot@uclibc.org) !(~f Amazon) !(~f UPS) !(~f Bank\\ of\\ America) !(~f Chase) !(~f Verizon)<return>" \
-    "Show Primary"
 macro index Mb \
     "L (~C buildroot@buildroot.org) | (~C buildroot@uclibc.org) | (~C buildroot@busybox.net)<return>" \
     "Show Mailinglists"
@@ -85,9 +86,15 @@ macro index Mg \
 macro index Mk \
     "L ~C linux-kernel@vger.kernel.org<return>" \
     "Show Mailinglists"
+macro index Mp \
+    "L !(~C git@vger.kernel.org) !(~C linux-kernel@vger.kernel.org) !(~C buildroot@buildroot.org) !(~C buildroot@busybox.net) !(~C buildroot@uclibc.org) !(~f Amazon) !(~f UPS) !(~f Bank\\ of\\ America) !(~f Chase) !(~f Verizon) !(~C yocto) !(~C meta-freescale)<return>" \
+    "Show Primary"
 macro index Mu \
     "L (~f Amazon) | (~f UPS) | (~f Chase) | (~f Bank\\ of\\ America) | (~f Verizon)<return>" \
     "Show Updates"
+macro index My \
+    "L (~C yocto) | (~C meta-freescale)<return>" \
+    "Show Mailinglists"
 macro index Id \
     "L^e (~d <1d)<return>" \
     "Show messages in last day"
