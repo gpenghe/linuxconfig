@@ -41,8 +41,12 @@ Plug 'tpope/vim-fugitive'
 " Workaround: use a 3rd party fix, which though will break python < 3.4
 " 2018-10-29
 "
+" Update: switch to python-mode/python-mode
+" 2020-09-14
+"
 " Plug 'klen/python-mode', {'branch': 'develop'}     " :help pymode
-Plug 'riher/python-mode', {'branch': 'fix/py3-importlib'}     " :help pymode
+" Plug 'riher/python-mode', {'branch': 'fix/py3-importlib'}     " :help pymode
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 Plug 'kien/ctrlp.vim'       " Usage: <C-\>p
 Plug 'easymotion/vim-easymotion'    "Usage: \\sf
