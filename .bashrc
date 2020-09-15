@@ -220,5 +220,7 @@ fi
 # make mutt ESC abort_key more responsive
 export ESCDELAY=0
 
+PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
 # last line
 true  # always returns 0
