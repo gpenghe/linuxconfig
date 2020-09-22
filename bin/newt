@@ -1,0 +1,12 @@
+name=$1
+file=test_$1.c
+
+[[ -f $file ]] && echo "$file already exists" && exit 1
+
+echo "Creating $file"
+
+echo "#include \"unity.h\"" > $file
+echo "#include \"testdefs.h\"" >> $file
+echo "" >> $file
+echo "#include \"$name.h\"" >> $file
+echo "" >> $file

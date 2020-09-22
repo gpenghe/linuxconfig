@@ -1,0 +1,7 @@
+name=$1
+
+[[ -f $name.c ]] && echo "$name.c already exists" && exit 1
+
+echo "Creating $name.c"
+
+echo "#include \"$name.h\"" > $name.c

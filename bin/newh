@@ -1,0 +1,11 @@
+name=$1
+name_uc=$(echo $name | tr '[a-z]' '[A-Z]')
+
+[[ -f $name.h ]] && echo "$name.h already exists" && exit 1
+
+echo "Creating $name.h"
+
+echo "#ifndef ${name_uc}_H" > $name.h
+echo "#define ${name_uc}_H" >> $name.h
+echo "" >> $name.h
+echo "#endif" >> $name.h
