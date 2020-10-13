@@ -139,3 +139,4 @@ alias weechat='TERM=screen weechat'
 # show links in concised way
 alias lls="\ls --color -G -l | sed '1d' | awk  '{print \$8, \$9, \$10}'"
 alias ipb4='ip -br -4 addr show scope global'
+alias mydate='date +"%Y-%m-%d"'
