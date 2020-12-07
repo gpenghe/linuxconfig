@@ -51,6 +51,7 @@ function prompt_command {
         ut=""
     fi
     tm=$(date +"%m-%d %H:%M:%S")
+    du=$(df |grep '/$'|awk '{print $5}')
     jobmsg=''
     jobnum=$(jobs|wc -l)
     [[ $jobnum -ne 0 ]] && jobmsg="[$jobnum]"
@@ -68,7 +69,7 @@ if [[ "$SHELL" =~ "bash" ]] && [[ "$is_unix" -eq 1 ]]; then
     if [[ -f ~/.git-completion.bash ]]; then source ~/.git-completion.bash; fi
     if [[ "$PLATFORM" != "PI" ]]; then
         PROMPT_COMMAND=prompt_command
-        PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut -$cpumsg \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
+        PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut$cpumsg $du \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
     else
         PROMPT_COMMAND=prompt_command_simple
         PS1='\e[32;1m\u@$(hostname):\e[36;1m $tm \e[36;1m\w \e[31;1m$errmsg\e[0m\n\$ '
