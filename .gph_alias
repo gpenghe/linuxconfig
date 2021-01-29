@@ -94,6 +94,8 @@ alias gx50='git tree2 -50'
 
 alias gs='git status -s'
 alias gc='git checkout master'
+alias gcm='git checkout master'
+alias gcd='git checkout dev'
 alias gt='git ls-tree -r --name-only HEAD | while read filename; do echo "$(git log -1 --format="%ai" -- $filename) $filename"; done | sort'
 
 alias gcb='git checkout'
