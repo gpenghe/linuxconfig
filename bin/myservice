@@ -1,0 +1,28 @@
+#!/bin/bash
+
+. /lib/lsb/init-functions
+
+case "$1" in
+    start)
+        echo "Doing my workarounds ..."
+
+        d=/var/run/screen
+        if [[ ! -d $d ]]; then
+            echo "Creating $d"
+            mkdir $d
+            chmod 777 $d
+        fi
+
+        d=/var/run/sshd
+        if [[ ! -d $d ]]; then
+            echo "Creating $d"
+            mkdir $d
+        fi
+
+        exit 0
+        ;;
+    stop|restart|force-reload) exit 0 ;;
+    *) echo "Usage: $0 {start|stop|restart|force-reload}" >&2; exit 1 ;;
+esac
+
+
