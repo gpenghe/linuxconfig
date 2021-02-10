@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+import sys
+
+def hex2asc(x):
+    s = ""
+    for c in x:
+        s += str(chr(int(c,16))) + " "
+    return s
+
+print(hex2asc(sys.argv[1:]))
