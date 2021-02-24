@@ -51,7 +51,7 @@ function prompt_command {
         ut=""
     fi
     tm=$(date +"%m-%d %H:%M:%S")
-    du=$(df |grep '/$'|awk '{print $5}')
+    du=$(df / |grep '/$'|awk '{print $5}')
     jobmsg=''
     jobnum=$(jobs|wc -l)
     [[ $jobnum -ne 0 ]] && jobmsg="[$jobnum]"
