@@ -4,7 +4,7 @@ vbell               off           # default: on
 hardcopy_append     on            # default: off
 # term				linux         # Let .bashrc to decide this
 termcapinfo rxvt-cygwin-native ti@:te@
-defscrollback           8192            # default: 100
+defscrollback           32000            # default: 100
 silencewait             16              # default: 30
 bufferfile            $HOME/.screen/exchange
 hardcopydir           $HOME/.screen
@@ -75,3 +75,7 @@ bind R eval "source $HOME/.screenrc" "echo '.screenrc reloaded!'"
 
 defflow off    # flow control off
 bind s     # disable C-a s
+
+# clear the history with /
+bind /
+bind / eval "scrollback 0" "scrollback 32000"
