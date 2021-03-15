@@ -35,7 +35,7 @@ elif [ $PLATFORM = 'MAC' ]; then
 elif [ $PLATFORM = 'LINUX' ]; then
     alias e="nautilus"
     # Use current user's PATH
-    alias sudo='sudo env PATH=$PATH'
+    # alias sudo='sudo env PATH=$PATH'   # disable this since it's too intrusive
 fi
 
 if nvim -h &>/dev/null; then
