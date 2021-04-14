@@ -379,3 +379,4 @@ autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 hi Comment ctermfg=DarkGray
+hi Visual ctermbg=Cyan cterm=reverse
