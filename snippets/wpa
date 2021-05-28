@@ -1,0 +1,7 @@
+# client:
+wpa_passphrase your-ESSID your-passphrase | sudo tee /etc/wpa_supplicant.conf
+wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp0s20f3 -dd
+
+# server:
+# systemctl stop wpa_supplicant
+# /usr/sbin/sdcsupp -u -dddd  # hostapd?
