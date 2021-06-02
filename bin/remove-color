@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# Usage "$0 color.txt > nocolor.txt"
+#
 
-# use like foo.sh | remove-color
-sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"
+sed 's/\x1b\[[0-9;]*m//g' $1
+
+# for processing logs
+# for f in *.log;do  remove-color $f > a; tr "\010\000\013\033" "\040\040\040\040" <a > $f; dos2unix -f $f; sed -i 's/ *$//g' $
