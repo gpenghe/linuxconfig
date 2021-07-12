@@ -42,20 +42,25 @@ function prompt_command_simple {
 function prompt_command {
     local ret="$?"
     errmsg=''
+    cpumsg=''
+    jobmsg=''
+    du=''
+    tm=''
     [[ $ret -ne 0 ]] && errmsg="->($(printf '%x' $ret))"
     if [[ $(uname) == 'Darwin' ]]; then
         ut=$(uptime | awk '{print $10}')
+    elif uname -a|grep -q Microsoft; then
+        :
     elif [[ $(uname) == 'Linux' ]]; then
         ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
-    else  # cygwin, mingw64, etc
+        cpumsg="$(cat /proc/cpuinfo |grep MHz|cut -d: -f 2|head -1|cut -d. -f1) MHz"
+        jobnum=$(jobs|wc -l)
+        [[ $jobnum -ne 0 ]] && jobmsg="[$jobnum]"
+        du=$(df / |grep '/$'|awk '{print $5}')
+        tm=$(date +"%m-%d %H:%M:%S")
+    else  # cygwin, mingw64, linux on Windows etc
         ut=""
     fi
-    tm=$(date +"%m-%d %H:%M:%S")
-    du=$(df / |grep '/$'|awk '{print $5}')
-    jobmsg=''
-    jobnum=$(jobs|wc -l)
-    [[ $jobnum -ne 0 ]] && jobmsg="[$jobnum]"
-    cpumsg="$(cat /proc/cpuinfo |grep MHz|cut -d: -f 2|head -1|cut -d. -f1) MHz"
 }
 
 if [[ "$SHELL" =~ "bash" ]] && [[ "$is_unix" -eq 1 ]]; then
@@ -67,10 +72,13 @@ if [[ "$SHELL" =~ "bash" ]] && [[ "$is_unix" -eq 1 ]]; then
     export GIT_PS1_SHOWSTASHSTATE=1
     export GIT_PS1_SHOWUPSTREAM=auto
     if [[ -f ~/.git-completion.bash ]]; then source ~/.git-completion.bash; fi
-    if [[ "$PLATFORM" != "PI" ]]; then
-        PROMPT_COMMAND=prompt_command
-        PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut$cpumsg $du \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
-    else
+    PROMPT_COMMAND=prompt_command
+    PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut$cpumsg $du \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
+    if [[ "$PLATFORM" == "PI" ]]; then
+        PROMPT_COMMAND=prompt_command_simple
+        PS1='\e[32;1m\u@$(hostname):\e[36;1m $tm \e[36;1m\w \e[31;1m$errmsg\e[0m\n\$ '
+    fi
+    if uname -a|grep -q Microsoft; then
         PROMPT_COMMAND=prompt_command_simple
         PS1='\e[32;1m\u@$(hostname):\e[36;1m $tm \e[36;1m\w \e[31;1m$errmsg\e[0m\n\$ '
     fi
