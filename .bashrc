@@ -111,6 +111,7 @@ export VISUAL=vim
 #if [ $HOST != "MINIPC" ] && [ $HOST != "MAC_LINUX" ]; then
 #    stty -ixon
 #fi
+stty -ixon      # Disable the damn Ctrl-S
 
 if [ $PLATFORM = 'MAC' ]; then
     export EDITOR=vim
