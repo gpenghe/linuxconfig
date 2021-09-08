@@ -54,7 +54,7 @@ function prompt_command {
     elif [[ $(uname) == 'Linux' ]]; then
         ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
         cpumsg="$(cat /proc/cpuinfo |grep MHz|cut -d: -f 2|head -1|cut -d. -f1) MHz"
-        jobnum=$(jobs|wc -l)
+        jobnum=$(jobs -s|wc -l)
         [[ $jobnum -ne 0 ]] && jobmsg="[$jobnum]"
         du=$(df / |grep '/$'|awk '{print $5}')
         tm=$(date +"%m-%d %H:%M:%S")
