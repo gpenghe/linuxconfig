@@ -1,1 +1,1 @@
-git commit -m "$GIT_COMMIT_PREFIX $*"
+git commit -m "$*"
