@@ -124,6 +124,8 @@ alias gd="git diff --ignore-all-space --color-words='[[:alnum:]_]+|[^[:space:]]'
 alias gdc="gd --cached"
 alias gdh="gd HEAD~1 HEAD"
 
+alias gsh="git show --ignore-all-space --color-words='[[:alnum:]_]+|[^[:space:]]'"
+
 alias gdt='git difftool --tool=vimdiff --no-prompt'
 alias gdtc='git difftool --tool=vimdiff --no-prompt --cached'
 alias gdth='git difftool --tool=vimdiff --no-prompt HEAD~1 HEAD'
