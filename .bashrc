@@ -231,6 +231,8 @@ fi
 export ESCDELAY=0
 
 PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH=/opt/sonar-scanner-4.6.2.2472-linux/bin:$PATH
+export PATH=/opt/build-wrapper-linux-x86:$PATH
 
 # last line
 true  # always returns 0
