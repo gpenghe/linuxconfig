@@ -1,0 +1,13 @@
+[Unit]
+Description=Win7 VM for vader-rtos Jenkins node
+
+[Service]
+User=peng
+Environment="DISPLAY=:0"
+ExecStart=/usr/local/bin/start_win7_vm.sh
+ExecStop=/usr/local/bin/stop_win7_vm.sh
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical.target
