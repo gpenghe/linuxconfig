@@ -1,0 +1,246 @@
+pipeline {
+    agent any;
+
+    environment {
+        BBK_APP_PW = credentials('BBK_APP_PW')
+        gitdir = "${env.WORKSPACE}"
+        rdk_dir = "${env.WORKSPACE}/build/rdk_source"
+        vcmdir = "${env.WORKSPACE}/build/rdk_source/vcm"
+        weblcm_tool_dir    = "${env.WORKSPACE}/ext/weblcm-tool"
+        cloud_packages_dir = "${env.WORKSPACE}/ext/cloud_packages"
+    }
+
+    stages {
+
+        stage('Print Info') {
+            steps {
+                sh "printenv"
+            }
+        }
+
+        stage('Prepare') {
+            steps {
+                sh """
+                    cd ${env.gitdir}
+                    git clean -dfx
+                    echo ${env.BUILD_NUMBER} > build_number.txt
+                """
+            }
+        }
+
+        stage('Make init') {
+            steps {
+                sh """
+                    cd ${env.gitdir}
+                    V=1 make init
+                """
+            }
+        }
+
+        stage('Make sys_firstTime') {
+            steps {
+                sh """
+                    . ${env.gitdir}/setup-gw-environment
+                    cd ${env.rdk_dir}
+                    V=1 make BUILD_FUNC_TYPE=DEV  BUILD_DEBUG_TYPE=DEBUG sys_firstTime
+                    """
+            }
+        }
+
+        stage('Build weblcm_tool') {
+            steps {
+                sh """
+                    . ${env.gitdir}/setup-gw-environment
+                    V=1 make weblcm_tool
+                    V=1 make weblcm_tool_install
+                    """
+            }
+        }
+
+        stage('Build smbnetfs') {
+            steps {
+                sh """
+                    . ${env.gitdir}/setup-gw-environment
+                    V=1 make smbnetfs
+                    sudo apt install zlib1g-dev  # uninstalled by samba script
+                    """
+            }
+        }
+
+        stage('Build blkid') {
+            steps {
+                sh """
+                    . ${env.gitdir}/setup-gw-environment
+                    V=1 make blkid
+                    """
+            }
+        }
+
+        stage('Main Build') {
+            steps {
+                sh """
+                    . ${env.gitdir}/setup-gw-environment
+                    V=1 make build
+                    """
+            }
+        }
+
+        stage('Static Check with SonarQube') {
+            steps {
+                withSonarQubeEnv(installationName: 'sq1') {
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                        sh """
+                            . ${env.gitdir}/setup-gw-environment
+                            V=1 make sq_build_index
+                            V=1 make sq_check
+                            """
+                    }
+                }
+            }
+        }
+
+        stage('SonarQube Quality Gate') {
+            steps {
+                timeout(time: 3, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
+        stage('Static Check with cppcheck') {
+            steps {
+                sh """
+                    echo "Starting PC based tests (Static Check, Unit Test, usbsim, and usb Main_host)"
+                    cd ${env.vcmdir}
+                    . ${env.vcmdir}/pc_env.sh
+                    pushd ${weblcm_tool_dir}
+                      make clean
+                      make weblcm-lib
+                    popd
+                    V=1 make static_check
+                """
+            }
+        }
+
+        stage('Unit Test') {
+            steps {
+                sh """
+                    cd ${env.vcmdir}
+                    . ${env.vcmdir}/pc_env.sh
+                    make unittest
+                """
+            }
+        }
+
+        stage('Build usbsim') {
+            steps {
+                sh """
+                    cd ${env.vcmdir}
+                    . ${env.vcmdir}/pc_env.sh
+                    make -C ${env.vcmdir}/usbSim/ clean
+                    V=1 make -C ${env.vcmdir}/usbSim
+                """
+            }
+        }
+
+        stage('Build usbMain_host') {
+            steps {
+                sh """
+                    cd ${env.vcmdir}
+                    . ${env.vcmdir}/pc_env.sh
+                    make -C ${env.vcmdir}/usbMain clean
+                    V=1 make -C ${env.vcmdir}/usbMain
+                """
+            }
+        }
+
+        stage('Build tabletsim') {
+            steps {
+                sh """
+                    cd ${env.vcmdir}
+                    . ${env.vcmdir}/pc_env.sh
+                    cd tabletsim
+                    V=1 make clean
+                    V=1 make
+                """
+            }
+        }
+
+        stage('Build documentation') {
+            steps {
+                sh """
+                    V=1 make doxygen
+                """
+            }
+        }
+
+        stage('Deploy') {
+            parallel {
+                stage('Build & Deploy Etcher Zip') {
+                    steps {
+                        sh """
+                            cd ${env.vcmdir}
+                            . ${env.vcmdir}/rdk_env.sh
+                            cd ${env.vcmdir}/release
+                            V=1 make release_sd
+                            ./deploy.sh  $BBK_APP_PW
+                        """
+                    }
+                }
+
+                stage('Program SD Card') {
+                    steps {
+                        sh """
+                            cd ${env.vcmdir}
+                            . ${env.vcmdir}/rdk_env.sh
+                            cd ${env.vcmdir}/release
+                            export SDDEV=/dev/sdb
+                            V=1 make bmap_sd
+                        """
+                    }
+                }
+                stage('Generate Cloud Package') {
+                    steps {
+                        sh """
+                            cd ${env.vcmdir}
+                            . ${env.vcmdir}/rdk_env.sh
+                            cd release
+                            ./create_bb_cloud_pkg.sh
+                            cp boot_update.tgz ${env.cloud_packages_dir}/bins/vader
+                            cp root_update.tgz ${env.cloud_packages_dir}/bins/vader
+                            ./get_ver.sh > ${env.cloud_packages_dir}/bins/vader
+                            cd ${env.cloud_packages_dir}
+                            echo "Generating cloud package ..."
+                            V=1 DEV=VADER CRYPTSIGN=1 make pkg_bb_all
+                            echo "Uploading cloud package ..."
+                            V=1 DEV=VADER CRYPTSIGN=1 BBK_UPLOAD_REPO=vader-rtos BBK_APP_PW=${env.BBK_APP_PW} make upload_bb_all
+                        """
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            slackSend channel:      'jenkins-ci-vader',
+                color:              '00FF00',
+                iconEmoji:          '',
+                message:            "Build ${currentBuild.currentResult}: ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                tokenCredentialId:  'slack_try2',
+                username:           ''
+        }
+        failure {
+            slackSend channel:      'jenkins-ci-vader',
+                color:              'FF0000',
+                iconEmoji:          '',
+                message:            "Build ${currentBuild.currentResult}: ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                tokenCredentialId:  'slack_try2',
+                username:           ''
+            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                attachLog: true,
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+        }
+    }
+}
