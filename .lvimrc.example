@@ -2,3 +2,4 @@
 " ----------------------
 set noexpandtab
 set nosmarttab
+set invlist
