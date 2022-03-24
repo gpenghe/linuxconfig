@@ -1,0 +1,4 @@
+" Tab related
+" ----------------------
+set noexpandtab
+set nosmarttab
