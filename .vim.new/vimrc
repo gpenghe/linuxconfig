@@ -54,8 +54,7 @@ Plug 'vim-scripts/TaskList.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-abolish'
 
-Plug 'LucHermitte/lh-vim-lib'
-Plug 'LucHermitte/local_vimrc'
+Plug 'embear/vim-localvimrc'        " Place a .lvimrc on the project tree
 
 Plug 'scrooloose/nerdcommenter'
 
@@ -191,7 +190,8 @@ call plug#end()
 " Plugin Settings
 " ===================================================
 
-call lh#local_vimrc#munge('whitelist', $HOME.'/work')
+" vim-localvimrc
+let g:localvimrc_whitelist = $HOME . "/work"        " No confirmation for loading .lvimrc
 
 " neocomplete
 " ----------------------
