@@ -237,3 +237,4 @@ export PATH=/opt/build-wrapper-linux-x86:$PATH
 
 # last line
 true  # always returns 0
+export PATH=$PATH:/home/gph/opt/vcpkg
