@@ -144,6 +144,10 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 Plug 'godlygeek/tabular'
 
+Plug 'github/copilot.vim', { 'branch': 'main' }
+
+"----------- Plugins Ended ----------------
+"
 "----------- Snippet Related ----------------
 " Track the engine.
 " Plug 'SirVer/ultisnips'
