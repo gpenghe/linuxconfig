@@ -144,7 +144,7 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 Plug 'godlygeek/tabular'
 
-Plug 'github/copilot.vim', { 'branch': 'main' }
+Plug 'github/copilot.vim', { 'branch': 'release' }
 
 "----------- Plugins Ended ----------------
 "

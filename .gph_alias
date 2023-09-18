@@ -39,9 +39,9 @@ elif [ $PLATFORM = 'LINUX' ]; then
 fi
 
 if nvim -h &>/dev/null; then
-    alias vi="/usr/bin/nvim"
+    alias vi="nvim"
 else
-    alias vi="/usr/bin/vim"
+    alias vi="vim"
 fi
 alias vif='vi $(fzf --height 20%)'
 alias vidiff='vi -c "set syn=diff"'
