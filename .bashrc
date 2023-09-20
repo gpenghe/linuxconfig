@@ -52,11 +52,8 @@ function prompt_command {
     elif uname -a|grep -q Microsoft; then
         :
     elif [[ $(uname) == 'Linux' ]]; then
-        ut=$(uptime |sed -e 's/.*: //' -e 's/,.*//')
-        cpumsg="$(cat /proc/cpuinfo |grep MHz|cut -d: -f 2|head -1|cut -d. -f1) MHz"
         jobnum=$(jobs -s|wc -l)
         [[ $jobnum -ne 0 ]] && jobmsg="[$jobnum]"
-        du=$(df / |grep '/$'|awk '{print $5}')
         tm=$(date +"%m-%d %H:%M:%S")
     else  # cygwin, mingw64, linux on Windows etc
         ut=""
@@ -72,7 +69,7 @@ if [[ "$SHELL" =~ "bash" ]] && [[ "$is_unix" -eq 1 ]]; then
     export GIT_PS1_SHOWSTASHSTATE=1
     export GIT_PS1_SHOWUPSTREAM=auto
     if [[ -f ~/.git-completion.bash ]]; then source ~/.git-completion.bash; fi
-    # PROMPT_COMMAND=prompt_command
+    PROMPT_COMMAND=prompt_command
     # PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut$cpumsg $du \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
     PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm \[\e[36;1m\]\w\[\e[32;1m\]\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
 fi
