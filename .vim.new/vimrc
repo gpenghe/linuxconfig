@@ -145,6 +145,7 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 Plug 'godlygeek/tabular'
 
 Plug 'github/copilot.vim', { 'branch': 'release' }
+let g:copilot_filetypes = {'markdown': v:true}
 
 "----------- Plugins Ended ----------------
 "
