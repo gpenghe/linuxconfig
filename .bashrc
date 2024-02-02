@@ -60,21 +60,6 @@ function prompt_command {
     fi
 }
 
-if [[ "$SHELL" =~ "bash" ]] && [[ "$is_unix" -eq 1 ]]; then
-    complete -o default -F _pip_completion pip
-    # shell options
-    shopt -s nocaseglob
-    export GIT_PS1_SHOWDIRTYSTATE=1
-    export GIT_PS1_SHOWUNTRACKEDFILES=1
-    export GIT_PS1_SHOWSTASHSTATE=1
-    export GIT_PS1_SHOWUPSTREAM=auto
-    if [[ -f ~/.git-completion.bash ]]; then source ~/.git-completion.bash; fi
-    PROMPT_COMMAND=prompt_command
-    # PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut$cpumsg $du \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
-    PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm \[\e[36;1m\]\w\[\e[32;1m\]\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
-fi
-
-
 #eval `/usr/bin/dircolors -b ~/.dircolors`
 
 export TABSTOP=4
@@ -154,6 +139,19 @@ if [ $PLATFORM = 'LINUX' ]; then
         [[ -f /etc/bash_completion ]] && . /etc/bash_completion
     fi
 
+fi
+
+if [[ "$SHELL" =~ "bash" ]] && [[ "$is_unix" -eq 1 ]]; then
+    complete -o default -F _pip_completion pip
+    # shell options
+    shopt -s nocaseglob
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    export GIT_PS1_SHOWUNTRACKEDFILES=1
+    export GIT_PS1_SHOWSTASHSTATE=1
+    export GIT_PS1_SHOWUPSTREAM=auto
+    PROMPT_COMMAND=prompt_command
+    # PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm\e[34;1m $ut$cpumsg $du \[\e[36;1m\]\w\[\e[32;1m\]$(__git_ps1 " %s")\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
+    PS1='\[\e[32;1m\]\u@$(hostname):\e[36;1m $tm \[\e[36;1m\]\w\[\e[32;1m\]\[ \e[36;1m>\e[35m$jobmsg\e[31;1m$errmsg\e[0m\]\n\$ '
 fi
 
 ##########################################
